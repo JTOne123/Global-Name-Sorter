@@ -6,6 +6,8 @@ Badges
 
 Screenshots
 
+Pages: https://puzzleduck.github.io/Global-Name-Sorter/
+
 
 ## Project Structure
 
@@ -44,9 +46,9 @@ contrib
 - [x] review GlobalX github repos for style/practices/project layout/etc
 - [x] docs & github setup
 - [x] setup wiki
-- [ ] Issue templates
-- [ ] GH Pages
-- [ ] Pull request template
+- [x] GH Pages
+- [x] Issue templates
+- [x] Pull request template
 - [ ] initialise project
 - [ ] setup tests
 - [ ] setup CI

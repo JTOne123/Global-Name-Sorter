@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using Models;
 
 namespace NameSorter.Tests
 {

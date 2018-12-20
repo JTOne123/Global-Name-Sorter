@@ -49,9 +49,12 @@ contrib
 - [x] GH Pages
 - [x] Issue templates
 - [x] Pull request template
-- [ ] initialise project
-- [ ] setup tests
+- [x] initialise project
+- [x] setup tests
+- [x] semantic versioning
 - [ ] setup CI
+- [x] setup nuget deployment
+- [ ] data models
 - [ ] sort library
 - [ ] integration tests
 - [ ] program with no input

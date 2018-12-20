@@ -11,9 +11,20 @@ Pages: https://puzzleduck.github.io/Global-Name-Sorter/
 
 ## Project Structure
 
+NameSorter lib, GlobalNameSorter app and Tests
+
+Repo
+https://github.com/PuZZleDucK/Global-Name-Sorter
+
+Package
+https://www.nuget.org/packages/NameSorter
+https://www.nuget.org/packages/GlobalNameSorter
+
 Library
 
 CI
+https://ci.appveyor.com/project/PuZZleDucK/global-name-sorter
+https://travis-ci.org/PuZZleDucK/Global-Name-Sorter
 
 TDD & Tests
 
@@ -52,7 +63,7 @@ contrib
 - [x] initialise project
 - [x] setup tests
 - [x] semantic versioning
-- [ ] setup CI
+- [x] setup CI
 - [x] setup nuget deployment
 - [ ] data models
 - [ ] sort library
@@ -63,7 +74,7 @@ contrib
 - [ ] stress testing?
 - [ ] add alternative CI platforms/providers?
 - [ ] alternative interface?
-- [ ] deployment/web interface?
+- [ ] automate deployment/web interface?
 - [ ] presentation?
 - [ ] naming review
 - [ ] SOLID review
@@ -157,8 +168,3 @@ Shelby Nathan Yoder
 - [ ] practical documentation
 - [ ] Create a build pipeline like Travis or AppVeyor that execute build and test
 - [ ] let us know the url of the repo
-
-
-
-
-

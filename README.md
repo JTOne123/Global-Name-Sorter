@@ -50,9 +50,10 @@ contrib
 - [x] Issue templates
 - [x] Pull request template
 - [x] initialise project
-- [ ] setup tests
+- [x] setup tests
+- [x] semantic versioning
 - [ ] setup CI
-- [ ] setup nuget deployment
+- [x] setup nuget deployment
 - [ ] data models
 - [ ] sort library
 - [ ] integration tests

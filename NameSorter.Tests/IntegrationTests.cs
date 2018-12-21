@@ -54,8 +54,38 @@ namespace NameSorter.Tests
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
                 global_name_sorter.StartInfo.FileName = @"../../../../GlobalNameSorter/bin/Release/netcoreapp2.1/ubuntu.14.04-x64/GlobalNameSorter";
+                string[] file_list =  Directory.GetFiles(@"./");
+                System.Console.WriteLine(":: HERE ::");
+                foreach(string file in file_list) {
+                  System.Console.WriteLine(file);
+                }
+                file_list =  Directory.GetFiles(@"../../../..");
+                System.Console.WriteLine(":: UP 4 ::");
+                foreach(string file in file_list) {
+                  System.Console.WriteLine(file);
+                }
+                file_list =  Directory.GetFiles(@"../../../../GlobalNameSorter/bin/Release/netcoreapp2.1/ubuntu.14.04-x64/");
+                System.Console.WriteLine(":: GNS ::");
+                foreach(string file in file_list) {
+                  System.Console.WriteLine(file);
+                }
             } else {
                 global_name_sorter.StartInfo.FileName = @"..\..\..\..\GlobalNameSorter\bin\Release\netcoreapp2.1\win10-x64\GlobalNameSorter";
+                string[] file_list =  Directory.GetFiles(@".\");
+                System.Console.WriteLine(":: HERE ::");
+                foreach(string file in file_list) {
+                  System.Console.WriteLine(file);
+                }
+                file_list =  Directory.GetFiles(@"..\..\..\..");
+                System.Console.WriteLine(":: UP 4 ::");
+                foreach(string file in file_list) {
+                  System.Console.WriteLine(file);
+                }
+                file_list =  Directory.GetFiles(@"..\..\..\..\GlobalNameSorter\bin\Release\netcoreapp2.1\win10-x64\GlobalNameSorter\");
+                System.Console.WriteLine(":: GNS ::");
+                foreach(string file in file_list) {
+                  System.Console.WriteLine(file);
+                }
             }
             global_name_sorter.StartInfo.RedirectStandardOutput = true;
             return global_name_sorter;

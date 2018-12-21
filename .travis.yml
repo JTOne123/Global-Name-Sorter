@@ -5,9 +5,9 @@ mono: none
 sudo: required
 
 stages:
-  - name: build
-  - name: test
-  - name: deploy
+  - build
+  - test
+  - deploy
 
 
 build:

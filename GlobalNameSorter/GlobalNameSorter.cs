@@ -1,6 +1,7 @@
 ﻿using System;
 using Models;
 using Inputs;
+using Outputs;
 
 namespace GlobalNameSorter
 {
@@ -26,9 +27,9 @@ namespace GlobalNameSorter
           string output = name_sorter.outputString();
 
           // Output Processing
-          Console.Write(output);
-          //File output
-          System.IO.File.WriteAllText(@"sorted-names-list.txt", output);
+          name_sorter.add_output_module(new ConsoleOutput());
+          name_sorter.add_output_module(new FileOutput());
+          name_sorter.generate_outputs();
         }
     }
 }

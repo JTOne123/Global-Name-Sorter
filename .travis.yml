@@ -3,8 +3,26 @@ solution: GlobalNameSorter.sln
 dotnet: 2.1.300
 mono: none
 sudo: required
-script:
-  - dotnet restore
-  - dotnet pack -c Release
-  - cd NameSorter.Tests
-  - dotnet test
+
+stages:
+  - build
+  - test
+  - name: deploy
+    if: branch = master
+
+jobs:
+  include:
+    - stage: build
+      name: "Build"
+      script: ./Scripts/build.sh
+    - stage: test
+      name: "Test"
+      script: ./Scripts/test.sh
+    - stage: deploy
+      name: "Deploy"
+      script: ./Scripts/deploy.sh
+
+
+
+  on:
+    branch: develop

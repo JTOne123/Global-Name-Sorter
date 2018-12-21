@@ -15,12 +15,25 @@ namespace NameSorter.Tests
         {
         }
 
+        [Fact]
+        public void ProgramPrintsExpectedOutputFromInputFile()
+        {
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+              _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter, "../../../Examples/03-two-items.txt");
+            } else {
+              _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter, @"..\..\..\Examples\03-two-items.txt");
+            }
+            _global_name_sorter.Start();
+            string output = _global_name_sorter.StandardOutput.ReadToEnd();
+            _global_name_sorter.WaitForExit();
+            Assert.Matches("Second Will Be First\nFirst Middle Last\n", output);
+        }
 
         [Fact]
         public void ProgramPrintsUsageWithoutArgs()
         {
             _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter);
-            // _global_name_sorter.StartInfo.Arguments = "";
             _global_name_sorter.Start();
             string output = _global_name_sorter.StandardOutput.ReadToEnd();
             _global_name_sorter.WaitForExit();
@@ -34,9 +47,6 @@ namespace NameSorter.Tests
                 var _global_name_sorter_builder = new Process();
                 _global_name_sorter_builder.StartInfo.FileName = @"dotnet";
 
-                System.Console.WriteLine(":: BUILD ::");
-                System.Console.WriteLine( Directory.GetCurrentDirectory ());
-
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
                     _global_name_sorter_builder.StartInfo.Arguments = "publish -c Release ../../../../../GlobalNameSorter";
@@ -48,76 +58,13 @@ namespace NameSorter.Tests
             }
             var global_name_sorter = new Process();
 
-            System.Console.WriteLine(":: RUN ::");
-            System.Console.WriteLine( Directory.GetCurrentDirectory ());
-
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
                 global_name_sorter.StartInfo.FileName = @"dotnet";
-                global_name_sorter.StartInfo.Arguments = @"run --project ../../../../GlobalNameSorter/GlobalNameSorter.csproj";
-                string[] file_list =  Directory.GetFiles(@"./");
-                System.Console.WriteLine(":: HERE ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetFiles(@"../../../..");
-                System.Console.WriteLine(":: UP 4 ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetFiles(@"../../../../GlobalNameSorter/bin/Release/");
-                System.Console.WriteLine(":: release ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetDirectories(@"../../../../GlobalNameSorter/bin/Release/");
-                System.Console.WriteLine(":: release dirs ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetFiles(@"../../../../GlobalNameSorter/bin/Release/netcoreapp2.1/");
-                System.Console.WriteLine(":: core 2.1 ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetDirectories(@"../../../../GlobalNameSorter/bin/Release/netcoreapp2.1/");
-                System.Console.WriteLine(":: core 2.1 dirs ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
+                global_name_sorter.StartInfo.Arguments = @"run --project ../../../../GlobalNameSorter/GlobalNameSorter.csproj " + args;
             } else {
                 global_name_sorter.StartInfo.FileName = @"dotnet";
-                global_name_sorter.StartInfo.Arguments = @"run --project ..\..\..\..\GlobalNameSorter\GlobalNameSorter.csproj";
-                string[] file_list =  Directory.GetFiles(@".\");
-                System.Console.WriteLine(":: HERE ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetFiles(@"..\..\..\..");
-                System.Console.WriteLine(":: UP 4 ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetFiles(@"..\..\..\..\GlobalNameSorter\bin\Release\");
-                System.Console.WriteLine(":: release ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetDirectories(@"..\..\..\..\GlobalNameSorter\bin\Release\");
-                System.Console.WriteLine(":: release dirs ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetFiles(@"..\..\..\..\GlobalNameSorter\bin\Release\netcoreapp2.1\");
-                System.Console.WriteLine(":: core 2.1 ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetDirectories(@"..\..\..\..\GlobalNameSorter\bin\Release\netcoreapp2.1\");
-                System.Console.WriteLine(":: core 2.1 dirs ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
+                global_name_sorter.StartInfo.Arguments = @"run --project ..\..\..\..\GlobalNameSorter\GlobalNameSorter.csproj " + args;
             }
             global_name_sorter.StartInfo.RedirectStandardOutput = true;
             return global_name_sorter;

@@ -73,9 +73,10 @@ contrib
 - [x] output formatter
 - [x] integration tests
 - [x] cli program with no input
-- [ ] example inputs
+- [x] example inputs
 - [ ] program with simple inputs
 - [ ] advanced inputs
+- [ ] extract i/o modules
 - [ ] stress testing?
 - [ ] add alternative CI platforms/providers?
 - [ ] alternative interface?

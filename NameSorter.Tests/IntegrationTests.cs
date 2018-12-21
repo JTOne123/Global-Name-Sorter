@@ -20,7 +20,7 @@ namespace NameSorter.Tests
         public void ProgramPrintsUsageWithoutArgs()
         {
             _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter);
-            _global_name_sorter.StartInfo.Arguments = "";
+            // _global_name_sorter.StartInfo.Arguments = "";
             _global_name_sorter.Start();
             string output = _global_name_sorter.StandardOutput.ReadToEnd();
             _global_name_sorter.WaitForExit();
@@ -39,9 +39,9 @@ namespace NameSorter.Tests
 
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
-                    _global_name_sorter_builder.StartInfo.Arguments = "publish -c Release -r ubuntu.14.04-x64 ../../../../../GlobalNameSorter";
+                    _global_name_sorter_builder.StartInfo.Arguments = "publish -c Release ../../../../../GlobalNameSorter";
                 } else {
-                    _global_name_sorter_builder.StartInfo.Arguments = @"publish -c Release -r win10-x64 ..\..\..\..\..\GlobalNameSorter";
+                    _global_name_sorter_builder.StartInfo.Arguments = @"publish -c Release ..\..\..\..\..\GlobalNameSorter";
                 }
                 _global_name_sorter_builder.Start();
                 _global_name_sorter_builder.WaitForExit();
@@ -53,7 +53,8 @@ namespace NameSorter.Tests
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                global_name_sorter.StartInfo.FileName = @"../../../../GlobalNameSorter/bin/Release/netcoreapp2.1/ubuntu.14.04-x64/GlobalNameSorter";
+                global_name_sorter.StartInfo.FileName = @"dotnet";
+                global_name_sorter.StartInfo.Arguments = @"run --project ../../../../GlobalNameSorter/GlobalNameSorter.csproj";
                 string[] file_list =  Directory.GetFiles(@"./");
                 System.Console.WriteLine(":: HERE ::");
                 foreach(string file in file_list) {
@@ -84,13 +85,9 @@ namespace NameSorter.Tests
                 foreach(string file in file_list) {
                   System.Console.WriteLine(file);
                 }
-                file_list =  Directory.GetFiles(@"../../../../GlobalNameSorter/bin/Release/netcoreapp2.1/ubuntu.14.04-x64/");
-                System.Console.WriteLine(":: GNS ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
             } else {
-                global_name_sorter.StartInfo.FileName = @"..\..\..\..\GlobalNameSorter\bin\Release\netcoreapp2.1\win10-x64\GlobalNameSorter";
+                global_name_sorter.StartInfo.FileName = @"dotnet";
+                global_name_sorter.StartInfo.Arguments = @"run --project ..\..\..\..\GlobalNameSorter\GlobalNameSorter.csproj";
                 string[] file_list =  Directory.GetFiles(@".\");
                 System.Console.WriteLine(":: HERE ::");
                 foreach(string file in file_list) {
@@ -118,11 +115,6 @@ namespace NameSorter.Tests
                 }
                 file_list =  Directory.GetDirectories(@"..\..\..\..\GlobalNameSorter\bin\Release\netcoreapp2.1\");
                 System.Console.WriteLine(":: core 2.1 dirs ::");
-                foreach(string file in file_list) {
-                  System.Console.WriteLine(file);
-                }
-                file_list =  Directory.GetFiles(@"..\..\..\..\GlobalNameSorter\bin\Release\netcoreapp2.1\win10-x64\GlobalNameSorter\");
-                System.Console.WriteLine(":: GNS ::");
                 foreach(string file in file_list) {
                   System.Console.WriteLine(file);
                 }

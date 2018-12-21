@@ -13,11 +13,14 @@ stages:
 jobs:
   include:
     - stage: build
-    - script: ./Scripts/build.sh
+      name: "Build"
+      script: ./Scripts/build.sh
     - stage: test
-    - script: ./Scripts/test.sh
+      name: "Test"
+      script: ./Scripts/test.sh
     - stage: deploy
-    - script: ./Scripts/deploy.sh
+      name: "Deploy"
+      script: ./Scripts/deploy.sh
 
 
 

@@ -66,9 +66,10 @@ contrib
 - [x] setup CI
 - [x] setup nuget deployment
 - [x] data models
-- [ ] sort library
+- [x] sort library
+- [x] output formatter
+- [ ] cli program with no input
 - [ ] integration tests
-- [ ] program with no input
 - [ ] program with simple inputs
 - [ ] advanced inputs
 - [ ] stress testing?
@@ -121,8 +122,8 @@ GlobalX Coding Assessment
 - [ ] best effort
 - [ ] a solution that you are proud of.
 
-- [ ] Build a name sorter
-- [ ] Given a set of names, order that set first by last name, then by any given names
+- [x] Build a name sorter
+- [x] Given a set of names, order that set first by last name, then by any given names
 - [ ] A name must have at least 1 given name and may have up to 3 given names.
 
 ## Example

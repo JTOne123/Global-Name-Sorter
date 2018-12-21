@@ -7,6 +7,15 @@ namespace NameSorter.Tests
     public class UnitTests
     {
         [Fact]
+        public void PersonLastNamesFunctionsAsExpected()
+        {
+            Person person = new Person();
+            person.setFirstNames("First");
+            person.setlastName("Last");
+            Assert.Equal("First Last", person.getFullName());
+        }
+
+        [Fact]
         public void PersonFirstNamesFunctionsAsExpected()
         {
             Person person = new Person();

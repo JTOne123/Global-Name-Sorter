@@ -29,6 +29,9 @@ https://travis-ci.org/PuZZleDucK/Global-Name-Sorter
 TDD & Tests
 
 
+Communicating
+user: via cli interface, display usage
+
 ## Running the project
 
 

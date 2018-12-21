@@ -64,6 +64,16 @@ namespace NameSorter.Tests
                 foreach(string file in file_list) {
                   System.Console.WriteLine(file);
                 }
+                file_list =  Directory.GetFiles(@"../../../../GlobalNameSorter/bin/Release/");
+                System.Console.WriteLine(":: release ::");
+                foreach(string file in file_list) {
+                  System.Console.WriteLine(file);
+                }
+                file_list =  Directory.GetDirectories(@"../../../../GlobalNameSorter/bin/Release/");
+                System.Console.WriteLine(":: release dirs ::");
+                foreach(string file in file_list) {
+                  System.Console.WriteLine(file);
+                }
                 file_list =  Directory.GetFiles(@"../../../../GlobalNameSorter/bin/Release/netcoreapp2.1/");
                 System.Console.WriteLine(":: core 2.1 ::");
                 foreach(string file in file_list) {
@@ -88,6 +98,16 @@ namespace NameSorter.Tests
                 }
                 file_list =  Directory.GetFiles(@"..\..\..\..");
                 System.Console.WriteLine(":: UP 4 ::");
+                foreach(string file in file_list) {
+                  System.Console.WriteLine(file);
+                }
+                file_list =  Directory.GetFiles(@"..\..\..\..\GlobalNameSorter\bin\Release\");
+                System.Console.WriteLine(":: release ::");
+                foreach(string file in file_list) {
+                  System.Console.WriteLine(file);
+                }
+                file_list =  Directory.GetDirectories(@"..\..\..\..\GlobalNameSorter\bin\Release\");
+                System.Console.WriteLine(":: release dirs ::");
                 foreach(string file in file_list) {
                   System.Console.WriteLine(file);
                 }

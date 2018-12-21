@@ -13,14 +13,12 @@ stages:
 jobs:
   include:
     - stage: build
+    - script:
+      - dotnet restore
+      - dotnet pack -c Release
     - stage: test
     - stage: deploy
 
-build:
-  provider: script
-  script:
-    - dotnet restore
-    - dotnet pack -c Release
 
 test:
   provider: script

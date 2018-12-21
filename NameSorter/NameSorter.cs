@@ -1,6 +1,7 @@
 ﻿using System;
-using Models;
+using System.Linq;
 using System.Collections.Generic;
+using Models;
 
 namespace NameSorter
 {
@@ -18,7 +19,7 @@ namespace NameSorter
       }
 
       public List<Person> sortPeople() {
-        sortedNames = inputNames;
+        sortedNames = inputNames.OrderBy(person => person.getOrderingName()).ToList();
         return sortedNames;
       }
     }

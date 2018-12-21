@@ -28,7 +28,7 @@ namespace NameSorter.Tests
               _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter, "../../../Examples/" + example_file + ".txt");
               expected_output = System.IO.File.ReadAllLines("../../../Examples/" + example_file + "-expected-result.txt");
             } else {
-              _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter, @"..\..\..\Examples\03-two-items.txt");
+              _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter, @"..\..\..\Examples\" + example_file + ".txt");
               expected_output = System.IO.File.ReadAllLines(@"..\..\..\Examples\" + example_file + "-expected-result.txt");
             }
             _global_name_sorter.Start();

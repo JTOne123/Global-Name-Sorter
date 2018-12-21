@@ -10,6 +10,12 @@ stages:
   - deploy
 
 
+jobs:
+  include:
+    - stage build
+    - stage test
+    - stage deploy
+
 build:
   provider: script
   script:

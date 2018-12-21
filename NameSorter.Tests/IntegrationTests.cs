@@ -20,6 +20,32 @@ namespace NameSorter.Tests
         [InlineData("02-single-item")]
         [InlineData("03-two-items")]
         [InlineData("04-provided-example")]
+        public void ProgramWritesExpectedOutputToFile(string example_file)
+        {
+            string[] expected_output;
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+              _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter, "../../../Examples/" + example_file + ".txt");
+              expected_output = System.IO.File.ReadAllLines("../../../Examples/" + example_file + "-expected-result.txt");
+            } else {
+              _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter, @"..\..\..\Examples\03-two-items.txt");
+              expected_output = System.IO.File.ReadAllLines(@"..\..\..\Examples\" + example_file + "-expected-result.txt");
+            }
+            _global_name_sorter.Start();
+            _global_name_sorter.StandardOutput.ReadToEnd();
+            _global_name_sorter.WaitForExit();
+
+            string[] output_file_lines = System.IO.File.ReadAllLines(@"sorted-names-list.txt");
+            System.IO.File.Delete(@"sorted-names-list.txt");
+            Assert.Matches(String.Join("\n", expected_output), String.Join("\n", output_file_lines));
+        }
+
+
+        [Theory]
+        [InlineData("01-empty-input")]
+        [InlineData("02-single-item")]
+        [InlineData("03-two-items")]
+        [InlineData("04-provided-example")]
         public void ProgramPrintsExpectedOutputFromInputFile(string example_file)
         {
             string[] expected_output;

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using Models;
+using Inputs;
 
 namespace NameSorter
 {
@@ -9,6 +10,7 @@ namespace NameSorter
     {
       private List<Person> inputNames;
       private List<Person> sortedNames;
+      private IInput input_module;
 
       public NameSorter() {
         inputNames = new List<Person>();
@@ -25,6 +27,14 @@ namespace NameSorter
 
       public string outputString() {
         return String.Join("\n", sortedNames.Select(person => person.getFullName()).ToArray()) + "\n";
+      }
+
+      public void set_input_module(IInput newInputModule) {
+          input_module = newInputModule;
+      }
+
+      public void process_input(NameSorter name_sorter, string input_target) {
+        input_module.process_input(name_sorter, input_target);
       }
 
     }

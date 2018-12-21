@@ -1,5 +1,6 @@
 ﻿using System;
 using Models;
+using Inputs;
 
 namespace GlobalNameSorter
 {
@@ -14,19 +15,17 @@ namespace GlobalNameSorter
               Environment.Exit(-1);
           }
           NameSorter.NameSorter name_sorter = new NameSorter.NameSorter();
-          //input
-          if (System.IO.File.Exists(args[0]))
-          {
-               string[] names = System.IO.File.ReadAllLines(args[0]);
-               foreach(string name in names) {
-                 name_sorter.addPerson(new Person(name));
-               }
-          }
-          // Sort data
+          // Input Processing
+          name_sorter.set_input_module(new FileInput());
+          name_sorter.process_input(name_sorter, args[0]);
+
+          // Sorting
           name_sorter.sortPeople();
-          //formatting
+
+          // Formatting Output
           string output = name_sorter.outputString();
-          //output
+
+          // Output Processing
           Console.Write(output);
           //File output
           System.IO.File.WriteAllText(@"sorted-names-list.txt", output);

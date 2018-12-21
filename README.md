@@ -13,6 +13,8 @@ Pages: https://puzzleduck.github.io/Global-Name-Sorter/
 
 NameSorter lib, GlobalNameSorter app and Tests
 
+Modules: models, input, output
+
 Repo
 https://github.com/PuZZleDucK/Global-Name-Sorter
 
@@ -76,10 +78,9 @@ contrib
 - [x] example inputs
 - [x] program with simple inputs
 - [x] file output
-- [ ] extract i/o modules
-- [ ] advanced inputs
-- [ ] alternative formats
+- [x] extract i/o modules
 - [ ] automate deployment
+- [ ] advanced inputs
 - [ ] stress testing?
 - [ ] add alternative CI platforms/providers?
 - [ ] presentation?

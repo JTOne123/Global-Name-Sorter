@@ -22,5 +22,10 @@ namespace NameSorter
         sortedNames = inputNames.OrderBy(person => person.getOrderingName()).ToList();
         return sortedNames;
       }
+
+      public string outputString() {
+        return String.Join("\n", sortedNames.Select(person => person.getFullName()).ToArray()) + "\n";
+      }
+
     }
 }

@@ -67,7 +67,7 @@ contrib
 - [x] setup nuget deployment
 - [x] data models
 - [x] sort library
-- [ ] output formatter
+- [x] output formatter
 - [ ] cli program with no input
 - [ ] integration tests
 - [ ] program with simple inputs

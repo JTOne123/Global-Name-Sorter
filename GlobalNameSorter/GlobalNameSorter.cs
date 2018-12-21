@@ -28,6 +28,8 @@ namespace GlobalNameSorter
           string output = name_sorter.outputString();
           //output
           Console.Write(output);
+          //File output
+          System.IO.File.WriteAllText(@"sorted-names-list.txt", output);
         }
     }
 }

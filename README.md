@@ -75,13 +75,13 @@ contrib
 - [x] cli program with no input
 - [x] example inputs
 - [x] program with simple inputs
-- [ ] file output
-- [ ] advanced inputs
+- [x] file output
 - [ ] extract i/o modules
+- [ ] advanced inputs
+- [ ] alternative formats
+- [ ] automate deployment
 - [ ] stress testing?
 - [ ] add alternative CI platforms/providers?
-- [ ] alternative interface?
-- [ ] automate deployment/web interface?
 - [ ] presentation?
 - [ ] naming review
 - [ ] SOLID review
@@ -95,17 +95,17 @@ contrib
 
 Observations from reviewing GlobalX public repositories on GitHub. They are presented in approximate order I expect to emulate the good examples:
 
-- [ ] top level Project & Project.Tests convention
+- [x] top level Project & Project.Tests convention
 - [x] include guides (user/dev) - readme.md/contributing.md
 - [x] wiki
 - [x] mit licence
 - [x] CONTRIBUTING.md
-- [ ] include examples /
+- [x] include examples
 - [ ] include demo
-- [ ] include samples
+- [x] include samples
 - [ ] newbe/hackathon/low-hanging-fruit planning (multiple file arguments, output file specification, large files, ...)
-- [ ] unit test project
-- [ ] integration test project
+- [x] unit test project
+- [x] integration test project
 - [ ] stress test project
 - [ ] long and descriptive naming
 - [ ] self documenting... comments usually explain "why" or "why not the usual/expected way"
@@ -133,21 +133,18 @@ GlobalX Coding Assessment
 - [ ] A name must have at least 1 given name and may have up to 3 given names.
 
 ## Example
-- [ ] Given a a file called unsorted-names-list.txt containing the following list of names;
-
-- [ ] Executing the program in the following way;
+- [x] Given a a file called unsorted-names-list.txt containing the following list of names;
+- [x] Executing the program in the following way;
 name-sorter ./unsorted-names-list.txt
-
-- [ ] Should result the sorted names to screen;
-
-- [ ] and a file in the working directory called sorted-names-list.txt containing the sorted names.
+- [x] Should result the sorted names to screen;
+- [x] and a file in the working directory called sorted-names-list.txt containing the sorted names.
 
 - [ ] a list with a thousand names.
-- [ ] available for review on github.
-- [ ] names should be sorted correctly.
-- [ ] It should print the sorted list of names to screen.
-- [ ] It should write/overwrite the sorted list of names to a file called sorted-names-list.txt.
-- [ ] Unit tests
+- [x] available for review on github.
+- [x] names should be sorted correctly.
+- [x] It should print the sorted list of names to screen.
+- [x] It should write/overwrite the sorted list of names to a file called sorted-names-list.txt.
+- [x] Unit tests
 - [ ] practical documentation
-- [ ] Create a build pipeline like Travis or AppVeyor that execute build and test
-- [ ] let us know the url of the repo
+- [x] Create a build pipeline like Travis or AppVeyor that execute build and test
+- [x] let us know the url of the repo

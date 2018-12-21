@@ -27,7 +27,7 @@ namespace GlobalNameSorter
           //formatting
           string output = name_sorter.outputString();
           //output
-          Console.WriteLine(output);
+          Console.Write(output);
         }
     }
 }

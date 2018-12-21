@@ -74,7 +74,8 @@ contrib
 - [x] integration tests
 - [x] cli program with no input
 - [x] example inputs
-- [ ] program with simple inputs
+- [x] program with simple inputs
+- [ ] file output
 - [ ] advanced inputs
 - [ ] extract i/o modules
 - [ ] stress testing?

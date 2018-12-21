@@ -5,4 +5,5 @@ mono: none
 sudo: required
 script:
   - dotnet restore
+  - cd NameSorter.Tests
   - dotnet test

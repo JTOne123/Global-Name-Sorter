@@ -68,8 +68,8 @@ contrib
 - [x] data models
 - [x] sort library
 - [x] output formatter
+- [x] integration tests
 - [ ] cli program with no input
-- [ ] integration tests
 - [ ] program with simple inputs
 - [ ] advanced inputs
 - [ ] stress testing?

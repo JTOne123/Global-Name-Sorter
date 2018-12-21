@@ -18,7 +18,7 @@ namespace NameSorter.Tests
         public void PersonFirstNameFunctionsAsExpected()
         {
             Person person = new Person();
-            person.setFirstName("First");
+            person.setFirstNames("First");
             Assert.Equal("First", person.getFullName());
         }
 

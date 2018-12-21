@@ -65,7 +65,7 @@ contrib
 - [x] semantic versioning
 - [x] setup CI
 - [x] setup nuget deployment
-- [ ] data models
+- [x] data models
 - [ ] sort library
 - [ ] integration tests
 - [ ] program with no input

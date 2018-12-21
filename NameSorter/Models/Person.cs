@@ -44,5 +44,13 @@ namespace Models
             return firstNames;
           }
         }
+
+        public string getOrderingName() {
+          if(lastName != null){
+            return lastName + " " + firstNames;
+          } else {
+            return firstNames;
+          }
+        }
     }
 }

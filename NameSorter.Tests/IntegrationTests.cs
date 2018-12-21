@@ -13,12 +13,13 @@ namespace NameSorter.Tests
 
         public IntegrationTests()
         {
-            _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter);
         }
+
 
         [Fact]
         public void ProgramPrintsUsageWithoutArgs()
         {
+            _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter);
             _global_name_sorter.StartInfo.Arguments = "";
             _global_name_sorter.Start();
             string output = _global_name_sorter.StandardOutput.ReadToEnd();
@@ -27,11 +28,11 @@ namespace NameSorter.Tests
         }
 
 
-        public static Process PrepareNameSorterProcess(Process _global_name_sorter)
+        public static Process PrepareNameSorterProcess(Process _global_name_sorter, string args = "")
         {
             if (_global_name_sorter == null) {
                 var _global_name_sorter_builder = new Process();
-                _global_name_sorter_builder.StartInfo.FileName = @"dotnet-sdk.dotnet";
+                _global_name_sorter_builder.StartInfo.FileName = @"dotnet";
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
                     _global_name_sorter_builder.StartInfo.Arguments = "publish -c Release -r ubuntu.14.04-x64 ../../../../../GlobalNameSorter";

@@ -11,7 +11,7 @@ namespace NameSorter.Tests
         {
             Person person = new Person();
             person.setFirstNames("First");
-            person.setlastName("Last");
+            person.setLastName("Last");
             Assert.Equal("First Last", person.getFullName());
         }
 

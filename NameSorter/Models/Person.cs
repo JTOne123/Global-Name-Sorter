@@ -6,6 +6,11 @@ namespace Models
     public class Person
     {
         private string firstNames;
+        private string lastName;
+
+        public void setLastName(string newLastName = "") {
+          lastName = newLastName;
+        }
 
         public void setFirstNames(string newFirstName = "", string newSecondName = "", string newThirdName = "") {
           List<string> names = new List<string>();
@@ -22,7 +27,11 @@ namespace Models
         }
 
         public string getFullName() {
-          return firstNames;
+          if(lastName != null){
+            return firstNames + " " + lastName;
+          } else {
+            return firstNames;
+          }
         }
     }
 }

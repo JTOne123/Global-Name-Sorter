@@ -66,9 +66,10 @@ contrib
 - [x] setup CI
 - [x] setup nuget deployment
 - [x] data models
-- [ ] sort library
+- [x] sort library
+- [ ] output formatter
+- [ ] cli program with no input
 - [ ] integration tests
-- [ ] program with no input
 - [ ] program with simple inputs
 - [ ] advanced inputs
 - [ ] stress testing?

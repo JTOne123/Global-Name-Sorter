@@ -8,6 +8,16 @@ namespace NameSorter.Tests
     public class UnitTests
     {
         [Fact]
+        public void NameSorterOutputWithUnorderedNames()
+        {
+            NameSorter sorter = new NameSorter();
+            sorter.addPerson(new Person("Second SecondLast"));
+            sorter.addPerson(new Person("First Last"));
+            sorter.sortPeople();
+            Assert.Equal("First Last\nSecond SecondLast\n", sorter.outputString());
+        }
+
+        [Fact]
         public void NameSorterFunctionsWithUnorderedNames()
         {
             Person firstPerson = new Person("First Last");

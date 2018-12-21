@@ -20,5 +20,5 @@ build:
   project: GlobalNameSorter.sln
 
 test_script:
+  - cmd: dotnet pack -c Release
   - cmd: dotnet test
-

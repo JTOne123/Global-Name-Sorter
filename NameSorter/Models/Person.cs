@@ -4,14 +4,18 @@ namespace Models
 {
     public class Person
     {
-        private string firstName;
+        private string firstNames;
 
         public void setFirstName(string newName) {
-          firstName = newName;
+          firstNames = newName;
+        }
+
+        public void setFirstNames(string newFirstName = "", string newSecondName = "", string newThirdName = "") {
+          firstNames = String.Join(" ", new string[]{newFirstName, newSecondName, newThirdName});
         }
 
         public string getFullName() {
-          return firstName;
+          return firstNames;
         }
     }
 }

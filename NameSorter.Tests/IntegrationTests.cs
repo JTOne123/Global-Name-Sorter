@@ -33,6 +33,10 @@ namespace NameSorter.Tests
             if (_global_name_sorter == null) {
                 var _global_name_sorter_builder = new Process();
                 _global_name_sorter_builder.StartInfo.FileName = @"dotnet";
+
+                System.Console.WriteLine(":: BUILD ::");
+                System.Console.WriteLine( Directory.GetCurrentDirectory ());
+
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
                     _global_name_sorter_builder.StartInfo.Arguments = "publish -c Release -r ubuntu.14.04-x64 ../../../../../GlobalNameSorter";
@@ -43,6 +47,10 @@ namespace NameSorter.Tests
                 _global_name_sorter_builder.WaitForExit();
             }
             var global_name_sorter = new Process();
+
+            System.Console.WriteLine(":: RUN ::");
+            System.Console.WriteLine( Directory.GetCurrentDirectory ());
+
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
                 global_name_sorter.StartInfo.FileName = @"../../../../GlobalNameSorter/bin/Release/netcoreapp2.1/ubuntu.14.04-x64/GlobalNameSorter";

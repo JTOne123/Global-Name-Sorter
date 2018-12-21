@@ -7,30 +7,19 @@ sudo: required
 stages:
   - build
   - test
-  - deploy
-
+  - name: deploy
+    if: branch = master
 
 jobs:
   include:
     - stage: build
-    - script:
-      - dotnet restore
-      - dotnet pack -c Release
+    - script: ./Scripts/build.sh
     - stage: test
+    - script: ./Scripts/test.sh
     - stage: deploy
+    - script: ./Scripts/deploy.sh
 
 
-test:
-  provider: script
-  script:
-    - cd NameSorter.Tests
-    - dotnet test
-    - cd ..
 
-deploy:
-  provider: script
-  script:
-    - dotnet pack -c Release
-    - dotnet nuget push --source https://www.nuget.org --api-key $NUGET_API_KEY Service/bin/Release/*
   on:
     branch: develop

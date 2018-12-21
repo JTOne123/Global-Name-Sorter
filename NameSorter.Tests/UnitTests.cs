@@ -1,11 +1,22 @@
 using System;
 using Xunit;
 using Models;
+using System.Collections.Generic;
 
 namespace NameSorter.Tests
 {
     public class UnitTests
     {
+        [Fact]
+        public void NameSorterFunctionsWithSingleName()
+        {
+            Person person = new Person("First Last");
+            NameSorter sorter = new NameSorter();
+            sorter.addPerson(person);
+            List<Person> sortedPeople = sorter.sortPeople();
+            Assert.Equal("First Last", sortedPeople[0].getFullName());
+        }
+
         [Fact]
         public void StringConstructorForTwoPartNames()
         {

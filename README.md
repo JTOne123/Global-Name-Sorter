@@ -17,8 +17,8 @@ NuGet packaged versions of the [GlobalNameSorter](https://www.nuget.org/packages
 
 During development I have adopted a GitFlow like workflow and have created feature branches for most features and additions as pictured below. Each branch also ran through continuous integration testing before being merged back into the master branch.
 
-Feature Branching   | GitFlow Workflow
-:------------------:|:-----------------:
+Feature Branching          | GitFlow Workflow
+:-------------------------:|:---------------------:
 ![](Images/branches.png)   | ![](Images/flow.png)
 
 The project has continuous integration setups on [Travis](https://travis-ci.org/PuZZleDucK/Global-Name-Sorter) and [AppVeyor](https://ci.appveyor.com/project/PuZZleDucK/global-name-sorter) and the Travis setup also runs a deployment phase on changes to the master branch. This deployment phase will trigger a production build and then push the generated packages to NuGet.
@@ -122,9 +122,9 @@ Observations from reviewing GlobalX public repositories on GitHub. They are pres
 - [x] mit licence
 - [x] CONTRIBUTING.md
 - [x] include examples
-- [ ] include demo
+- [x] include demo
 - [x] include samples
-- [ ] newbe/hackathon/low-hanging-fruit planning (multiple file arguments, output file specification, large files, ...)
+- [x] newbe/hackathon/low-hanging-fruit planning (multiple file arguments, output file specification, large files, ...)
 - [x] unit test project
 - [x] integration test project
 - [x] stress test project
@@ -132,7 +132,6 @@ Observations from reviewing GlobalX public repositories on GitHub. They are pres
 - [ ] self documenting... comments usually explain "why" or "why not the usual/expected way"
 - [x] model / view separation
 - [ ] validation and verbose error reporting
-- [ ] nice .gitattributes
 - [x] honest about defects
 
 
@@ -166,6 +165,6 @@ name-sorter ./unsorted-names-list.txt
 - [x] It should print the sorted list of names to screen.
 - [x] It should write/overwrite the sorted list of names to a file called sorted-names-list.txt.
 - [x] Unit tests
-- [ ] practical documentation
+- [x] practical documentation
 - [x] Create a build pipeline like Travis or AppVeyor that execute build and test
 - [x] let us know the url of the repo

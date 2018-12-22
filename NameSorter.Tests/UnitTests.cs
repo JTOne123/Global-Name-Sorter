@@ -13,8 +13,8 @@ namespace NameSorter.Tests
         public void NameSorterEOutputWithExample()
         {
             NameSort sorter = new NameSort();
-            sorter.set_format_module(new PlainTextFormatter());
-            sorter.set_sort_module(new LastNameAscendingSorter());
+            sorter.SetFormatModule(new PlainTextFormatter());
+            sorter.SetSortModule(new LastNameAscendingSorter());
             sorter.AddPerson(new Person("Janet Parsons"));
             sorter.AddPerson(new Person("Vaughn Lewis"));
             sorter.AddPerson(new Person("Adonis Julius Archer"));
@@ -27,77 +27,74 @@ namespace NameSorter.Tests
             sorter.AddPerson(new Person("Mikayla Lopez"));
             sorter.AddPerson(new Person("Frankie Conner Ritter"));
             sorter.SortPeople();
-            Assert.Equal("Marin Alvarez\nAdonis Julius Archer\nBeau Tristan Bentley\nHunter Uriah Mathew Clarke\nLeo Gardner\nVaughn Lewis\nLondon Lindsey\nMikayla Lopez\nJanet Parsons\nFrankie Conner Ritter\nShelby Nathan Yoder\n", sorter.outputString());
+            Assert.Equal("Marin Alvarez\nAdonis Julius Archer\nBeau Tristan Bentley\nHunter Uriah Mathew Clarke\nLeo Gardner\nVaughn Lewis\nLondon Lindsey\nMikayla Lopez\nJanet Parsons\nFrankie Conner Ritter\nShelby Nathan Yoder\n", sorter.OutputString());
         }
 
         [Fact]
         public void NameSorterOutputWithUnorderedNames()
         {
             NameSort sorter = new NameSort();
-            sorter.set_format_module(new PlainTextFormatter());
-            sorter.set_sort_module(new LastNameAscendingSorter());
+            sorter.SetFormatModule(new PlainTextFormatter());
+            sorter.SetSortModule(new LastNameAscendingSorter());
             sorter.AddPerson(new Person("Second SecondLast"));
             sorter.AddPerson(new Person("First Last"));
             sorter.SortPeople();
-            Assert.Equal("First Last\nSecond SecondLast\n", sorter.outputString());
+            Assert.Equal("First Last\nSecond SecondLast\n", sorter.OutputString());
         }
 
         [Fact]
         public void NameSorterFunctionsWithUnorderedNames()
         {
-            Person firstPerson = new Person("First Last");
-            Person secondPerson = new Person("Second SecondLast");
             NameSort sorter = new NameSort();
-            sorter.set_format_module(new PlainTextFormatter());
-            sorter.set_sort_module(new LastNameAscendingSorter());
-            sorter.AddPerson(secondPerson);
-            sorter.AddPerson(firstPerson);
+            sorter.SetFormatModule(new PlainTextFormatter());
+            sorter.SetSortModule(new LastNameAscendingSorter());
+            sorter.AddPerson(new Person("Second SecondLast"));
+            sorter.AddPerson(new Person("First Last"));
             List<Person> sortedPeople = sorter.SortPeople();
-            Assert.Equal("First Last", sortedPeople[0].getFullName());
+            Assert.Equal("First Last", sortedPeople[0].GetFullName());
         }
 
         [Fact]
         public void NameSorterFunctionsWithSingleName()
         {
-            Person person = new Person("First Last");
             NameSort sorter = new NameSort();
-            sorter.set_format_module(new PlainTextFormatter());
-            sorter.set_sort_module(new LastNameAscendingSorter());
-            sorter.AddPerson(person);
+            sorter.SetFormatModule(new PlainTextFormatter());
+            sorter.SetSortModule(new LastNameAscendingSorter());
+            sorter.AddPerson(new Person("First Last"));
             List<Person> sortedPeople = sorter.SortPeople();
-            Assert.Equal("First Last", sortedPeople[0].getFullName());
+            Assert.Equal("First Last", sortedPeople[0].GetFullName());
         }
 
         [Fact]
         public void StringConstructorForTwoPartNames()
         {
             Person person = new Person("First Last");
-            Assert.Equal("First Last", person.getFullName());
+            Assert.Equal("First Last", person.GetFullName());
         }
 
         [Fact]
         public void PersonLastNamesFunctionsAsExpected()
         {
             Person person = new Person();
-            person.setFirstNames("First");
-            person.setLastName("Last");
-            Assert.Equal("First Last", person.getFullName());
+            person.SetFirstNames("First");
+            person.SetLastName("Last");
+            Assert.Equal("First Last", person.GetFullName());
         }
 
         [Fact]
         public void PersonFirstNamesFunctionsAsExpected()
         {
             Person person = new Person();
-            person.setFirstNames("First", "Second", "Third");
-            Assert.Equal("First Second Third", person.getFullName());
+            person.SetFirstNames("First", "Second", "Third");
+            Assert.Equal("First Second Third", person.GetFullName());
         }
 
         [Fact]
         public void PersonFirstNameFunctionsAsExpected()
         {
             Person person = new Person();
-            person.setFirstNames("First");
-            Assert.Equal("First", person.getFullName());
+            person.SetFirstNames("First");
+            Assert.Equal("First", person.GetFullName());
         }
 
         [Fact]

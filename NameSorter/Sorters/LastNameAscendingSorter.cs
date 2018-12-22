@@ -7,7 +7,7 @@ namespace Sorters
 {
     public class LastNameAscendingSorter : ISorter
     {
-        public List<Person> sort_people(List<Person> unsorted_people) {
+        public List<Person> SortPeople(List<Person> unsorted_people) {
           return unsorted_people.OrderBy(person => person.getOrderingName()).ToList();;
         }
     }

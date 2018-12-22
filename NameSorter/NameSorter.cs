@@ -28,37 +28,37 @@ namespace NameSorter
       }
 
       public List<Person> SortPeople() {
-        sortedNames = sort_module.sort_people(inputNames);
+        sortedNames = sort_module.SortPeople(inputNames);
         return sortedNames;
       }
 
-      public string outputString() {
-        return format_module.format_output(sortedNames);
+      public string OutputString() {
+        return format_module.FormatOutput(sortedNames);
       }
 
-      public void set_input_module(IInput newInputModule) {
+      public void SetInputModule(IInput newInputModule) {
           input_module = newInputModule;
       }
 
-      public void process_input(string input_target) {
-        input_module.process_input(this, input_target);
+      public void ProcessInput(string input_target) {
+        input_module.ProcessInput(this, input_target);
       }
 
-      public void add_output_module(IOutput new_output_module) {
+      public void AddOutputModule(IOutput new_output_module) {
         output_modules.Add(new_output_module);
       }
 
-      public void generate_outputs() {
+      public void GenerateOutputs() {
           foreach(IOutput this_module in output_modules){
-            this_module.generate_output(String.Join("\n", sortedNames.Select(person => person.getFullName()).ToArray()) + "\n");
+            this_module.GenerateOutput(String.Join("\n", sortedNames.Select(person => person.GetFullName()).ToArray()) + "\n");
           }
       }
 
-      public void set_format_module(IFormatter new_format) {
+      public void SetFormatModule(IFormatter new_format) {
         format_module = new_format;
       }
 
-      public void set_sort_module(ISorter new_sorter) {
+      public void SetSortModule(ISorter new_sorter) {
         sort_module = new_sorter;
       }
 

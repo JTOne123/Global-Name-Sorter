@@ -8,8 +8,8 @@ namespace Formatters
 {
     public class PlainTextFormatter : IFormatter
     {
-        public string format_output(List<Person> people){
-          return String.Join("\n", people.Select(person => person.getFullName()).ToArray()) + "\n";
+        public string FormatOutput(List<Person> people){
+          return String.Join("\n", people.Select(person => person.GetFullName()).ToArray()) + "\n";
         }
     }
 }

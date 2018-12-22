@@ -6,6 +6,6 @@ namespace Formatters
 {
     public interface IFormatter
     {
-        string format_output(List<Person> people);
+        string FormatOutput(List<Person> people);
     }
 }

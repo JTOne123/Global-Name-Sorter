@@ -21,19 +21,19 @@ namespace GlobalNameSorter
           }
           NameSort name_sorter = new NameSort();
           // Input Processing
-          name_sorter.set_input_module(new FileInput());
-          name_sorter.process_input(args[0]);
+          name_sorter.SetInputModule(new FileInput());
+          name_sorter.ProcessInput(args[0]);
 
           // Sorting
-          name_sorter.set_sort_module(new LastNameAscendingSorter());
+          name_sorter.SetSortModule(new LastNameAscendingSorter());
           List<Person> sorted_people = name_sorter.SortPeople();
 
           // Formatting and Processing Output
-          name_sorter.set_format_module(new PlainTextFormatter());
-          string output = name_sorter.outputString();
-          name_sorter.add_output_module(new ConsoleOutput());
-          name_sorter.add_output_module(new FileOutput());
-          name_sorter.generate_outputs();
+          name_sorter.SetFormatModule(new PlainTextFormatter());
+          string output = name_sorter.OutputString();
+          name_sorter.AddOutputModule(new ConsoleOutput());
+          name_sorter.AddOutputModule(new FileOutput());
+          name_sorter.GenerateOutputs();
         }
     }
 }

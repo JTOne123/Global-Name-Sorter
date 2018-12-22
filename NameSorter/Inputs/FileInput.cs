@@ -5,7 +5,7 @@ namespace Inputs
 {
     public class FileInput : IInput
     {
-        public void process_input(NameSort name_sorter, string input_target) {
+        public void ProcessInput(NameSort name_sorter, string input_target) {
 
             if (System.IO.File.Exists(input_target))
             {

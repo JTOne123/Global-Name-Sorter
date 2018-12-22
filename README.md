@@ -83,11 +83,11 @@ contrib
 - [x] automate deployment
 - [x] stress testing?
 - [x] advanced inputs
-- [ ] SOLID review
-- [ ] naming review
+- [x] SOLID review
+- [x] naming review
+- [x] review c# conventions
 - [ ] comment review
 - [ ] readability review
-- [ ] review c# conventions
 - [ ] update wiki, contrib and GH pages
 - [ ] final review
 
@@ -108,9 +108,9 @@ Observations from reviewing GlobalX public repositories on GitHub. They are pres
 - [x] unit test project
 - [x] integration test project
 - [x] stress test project
-- [ ] long and descriptive naming
+- [x] long and descriptive naming
 - [ ] self documenting... comments usually explain "why" or "why not the usual/expected way"
-- [ ] model / view separation
+- [x] model / view separation
 - [ ] validation and verbose error reporting
 - [ ] nice .gitattributes
 - [x] honest about defects

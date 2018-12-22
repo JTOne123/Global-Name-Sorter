@@ -79,9 +79,9 @@ contrib
 - [x] program with simple inputs
 - [x] file output
 - [x] extract i/o modules
-- [ ] automate deployment
-- [ ] advanced inputs
+- [x] automate deployment
 - [ ] stress testing?
+- [ ] advanced inputs
 - [ ] add alternative CI platforms/providers?
 - [ ] presentation?
 - [ ] naming review

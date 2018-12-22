@@ -20,6 +20,9 @@ namespace NameSorter.Tests
         [InlineData("02-single-item")]
         [InlineData("03-two-items")]
         [InlineData("04-provided-example")]
+        [InlineData("05-unicode")]
+        // [InlineData("06-unusual")]
+        [InlineData("07-whitespace")]
         public void ProgramWritesExpectedOutputToFile(string example_file)
         {
             string[] expected_output;

@@ -30,6 +30,7 @@ https://travis-ci.org/PuZZleDucK/Global-Name-Sorter
 
 TDD & Tests
 
+Stress testing 1000000 random name. Possible improvements in processing file in chunks rather than all at once. Issues with some unicode characters like ⇑. Issues with single character names.
 
 Communicating
 user: via cli interface, display usage
@@ -79,16 +80,15 @@ contrib
 - [x] program with simple inputs
 - [x] file output
 - [x] extract i/o modules
-- [ ] automate deployment
-- [ ] advanced inputs
-- [ ] stress testing?
-- [ ] add alternative CI platforms/providers?
-- [ ] presentation?
-- [ ] naming review
+- [x] automate deployment
+- [x] stress testing?
+- [x] advanced inputs
 - [ ] SOLID review
+- [ ] naming review
 - [ ] comment review
 - [ ] readability review
 - [ ] review c# conventions
+- [ ] update wiki, contrib and GH pages
 - [ ] final review
 
 
@@ -107,13 +107,13 @@ Observations from reviewing GlobalX public repositories on GitHub. They are pres
 - [ ] newbe/hackathon/low-hanging-fruit planning (multiple file arguments, output file specification, large files, ...)
 - [x] unit test project
 - [x] integration test project
-- [ ] stress test project
+- [x] stress test project
 - [ ] long and descriptive naming
 - [ ] self documenting... comments usually explain "why" or "why not the usual/expected way"
 - [ ] model / view separation
 - [ ] validation and verbose error reporting
 - [ ] nice .gitattributes
-- [ ] honest about defects
+- [x] honest about defects
 
 
 
@@ -123,11 +123,11 @@ Observations from reviewing GlobalX public repositories on GitHub. They are pres
 GlobalX Coding Assessment
 - [ ] how your code communicates it's purpose clearly and with empathy
 - [ ] caring about how easy your code is to understand and navigate
-- [ ] your ability to compose quality code that adheres to SOLID principles
-- [ ] how you write tests.
+- [x] your ability to compose quality code that adheres to SOLID principles
+- [x] how you write tests.
 
-- [ ] best effort
-- [ ] a solution that you are proud of.
+- [x] best effort
+- [X] a solution that you are proud of.
 
 - [x] Build a name sorter
 - [x] Given a set of names, order that set first by last name, then by any given names
@@ -140,7 +140,7 @@ name-sorter ./unsorted-names-list.txt
 - [x] Should result the sorted names to screen;
 - [x] and a file in the working directory called sorted-names-list.txt containing the sorted names.
 
-- [ ] a list with a thousand names.
+- [x] a list with a thousand names.
 - [x] available for review on github.
 - [x] names should be sorted correctly.
 - [x] It should print the sorted list of names to screen.

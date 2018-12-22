@@ -4,52 +4,70 @@
 
 Badges
 
-Screenshots
-
-Pages: https://puzzleduck.github.io/Global-Name-Sorter/
-
 
 ## Project Structure
 
-NameSorter lib, GlobalNameSorter app and Tests
+There are three major projects in the solution provided. The `NameSorter` library provides all the processing and formatting capabilities seperated into modules, The `GlobalNameSorter` application is a command line application for interaction with the NameSorter library and delegates most of the processing onto the library. The final project is the `NameSorter.Tests` project which contains extensive unit testing of the NameSorter library, integration testing of the GlobalNameSorter application and stress testing of the application. In the long run it could be beneficial to separate the tests into different packages to improve build times and allow developers to run the quicker unit tests during development and allow the CI pipelines to run the stress and integration tests.
 
-Modules: models, input, output
+The `NameSorter` library itself is also very modular with namespaces and interfaces that seperate the responsibilities of input, output, formatting, sorting and the data models. This leaves the NameSorter.cs primarily as a delegator and coordinator to the provided modules.
 
-Repo
-https://github.com/PuZZleDucK/Global-Name-Sorter
+The source code and further documentation for this project is available at [GitHub](https://github.com/PuZZleDucK/Global-Name-Sorter).
 
-Package
-https://www.nuget.org/packages/NameSorter
-https://www.nuget.org/packages/GlobalNameSorter
+NuGet packaged versions of the [GlobalNameSorter](https://www.nuget.org/packages/GlobalNameSorter) and [NameSorter](https://www.nuget.org/packages/NameSorter) are available on NuGet.
 
-Library
+During development I have adopted a GitFlow like workflow and have created feature branches for most features and additions as pictured below. Each branch also ran through continuous integration testing before being merged back into the master branch.
 
-CI
-https://ci.appveyor.com/project/PuZZleDucK/global-name-sorter
-https://travis-ci.org/PuZZleDucK/Global-Name-Sorter
+Feature Branching   | GitFlow Workflow
+:------------------:|:-----------------:
+![](Images/branches.png)   | ![](Images/flow.png)
 
-TDD & Tests
+The project has continuous integration setups on [Travis](https://travis-ci.org/PuZZleDucK/Global-Name-Sorter) and [AppVeyor](https://ci.appveyor.com/project/PuZZleDucK/global-name-sorter) and the Travis setup also runs a deployment phase on changes to the master branch. This deployment phase will trigger a production build and then push the generated packages to NuGet.
 
-Stress testing 1000000 random name. Possible improvements in processing file in chunks rather than all at once. Issues with some unicode characters like ⇑. Issues with single character names.
+During development of the library I utilised TDD to drive the implementation as shown in the red-green pattern on the CI builds during development shown below. During development of the command line interface I switched to using integration tests although some of these could have been re factored into unit tests also.
+
+I have stress tested the application with up to 1000000 random names, however my hardware couldn't push the tests much further than this. Performance was acceptable for the expected workloads however possible improvements could be made by processing the file in chunks rather than all at once if any use cases demanded that kind of performance. The more exotic tests uncovered some obscure issues with some unicode characters and single character names, however the possibility of these defects impacting usual operation was assumed to be minor.
+
+All tests suites were run sequentially in CI and some improvements could be made by separating the suites and running them in parallel, however build and test times were adequate for my purposes.
+
+Test Driven Development    | Stress Testing         | Automated Testing
+:-------------------------:|:----------------------:|:------------------------:
+![](Images/red-green.png)  | ![](Images/stress.png) | ![](Images/merge-ci.png)
+
 
 Communicating
-user: via cli interface, display usage
+user: via cli interface, display usage, website, wiki...
+
+Pages: https://puzzleduck.github.io/Global-Name-Sorter/
+
+Program Usage     | NuGet Package
+:----------------:|:------------------:
+![](usage.png)    | ![](nuget.png)
 
 ## Running the project
 
-
-
+To get started, clone the project and change into the directory
+```
 git clone
 cd
+```
 
+To build a developmet version simply run:
+```
 dotnet build
+```
 
-dotnet run --project
+Then to run the command line interface demo run:
+```
+dotnet run --project GlobalNameSorter
+dotnet run --project GlobalNameSorter NameSorter.Tests/Examples/04-provided-example.txt
+```
 
-tests
+To run the project tests:
+```
+dotnet test
+```
 
-contrib
-
+you can also checkout the [Contributing Guide](CONTRIBUTING.md) to find out more about getting involved with Global Name Sorter.
 
 
 ## Assumptions and Issues
@@ -87,7 +105,7 @@ contrib
 - [x] naming review
 - [x] review c# conventions
 - [ ] update packaging, 64x64 icon
-- [ ] update docas and instructions
+- [x] update docs and instructions
 - [ ] update wiki, contrib and GH pages
 - [ ] comment review
 - [ ] readability review

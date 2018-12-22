@@ -2,14 +2,26 @@
 # Contributing
 
 ## Getting started
-- Clone repo
-- Build
-- Run tests
+To get started, clone the project and change into the directory
+```
+git clone
+cd
+```
+
+To build a developmet version simply run:
+```
+dotnet build
+```
+
+To run the project tests:
+```
+dotnet test
+```
 
 
 ## Things to do
 
-Add example test files
+Add example test files:
 - [ ] edit `NameSorter.Tests/IntegrationTests.cs` and add an inline data entry to the "ProgramWritesExpectedOutputToFile" theory for your file.
 - [ ] add an input `.txt` file and an `-expected-result.txt` output file to `NameSorter.Tests/Examples`
 - [ ] runt dotnet test and verify your example is running

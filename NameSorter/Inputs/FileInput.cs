@@ -1,10 +1,11 @@
 using Models;
+using NameSorter;
 
 namespace Inputs
 {
     public class FileInput : IInput
     {
-        public void process_input(NameSorter.NameSorter name_sorter, string input_target) {
+        public void process_input(NameSort name_sorter, string input_target) {
 
             if (System.IO.File.Exists(input_target))
             {

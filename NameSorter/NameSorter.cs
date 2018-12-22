@@ -7,14 +7,14 @@ using Outputs;
 
 namespace NameSorter
 {
-    public class NameSorter
+    public class NameSort
     {
       private List<Person> inputNames;
       private List<Person> sortedNames;
       private IInput input_module;
       private List<IOutput> output_modules;
 
-      public NameSorter() {
+      public NameSort() {
         inputNames = new List<Person>();
         output_modules = new List<IOutput>();
       }
@@ -36,7 +36,7 @@ namespace NameSorter
           input_module = newInputModule;
       }
 
-      public void process_input(NameSorter name_sorter, string input_target) {
+      public void process_input(NameSort name_sorter, string input_target) {
         input_module.process_input(name_sorter, input_target);
       }
 

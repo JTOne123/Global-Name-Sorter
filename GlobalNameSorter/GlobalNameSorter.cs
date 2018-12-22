@@ -2,6 +2,7 @@
 using Models;
 using Inputs;
 using Outputs;
+using NameSorter;
 
 namespace GlobalNameSorter
 {
@@ -15,7 +16,7 @@ namespace GlobalNameSorter
               Console.WriteLine("GlobalNameSorter requires at least one argument. Example usage:\n    GlobalNameSorter <./unsorted-names-list.txt>");
               Environment.Exit(-1);
           }
-          NameSorter.NameSorter name_sorter = new NameSorter.NameSorter();
+          NameSort name_sorter = new NameSort();
           // Input Processing
           name_sorter.set_input_module(new FileInput());
           name_sorter.process_input(name_sorter, args[0]);

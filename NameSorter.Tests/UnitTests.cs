@@ -10,7 +10,7 @@ namespace NameSorter.Tests
         [Fact]
         public void NameSorterEOutputWithExample()
         {
-            NameSorter sorter = new NameSorter();
+            NameSort sorter = new NameSort();
             sorter.addPerson(new Person("Janet Parsons"));
             sorter.addPerson(new Person("Vaughn Lewis"));
             sorter.addPerson(new Person("Adonis Julius Archer"));
@@ -29,7 +29,7 @@ namespace NameSorter.Tests
         [Fact]
         public void NameSorterOutputWithUnorderedNames()
         {
-            NameSorter sorter = new NameSorter();
+            NameSort sorter = new NameSort();
             sorter.addPerson(new Person("Second SecondLast"));
             sorter.addPerson(new Person("First Last"));
             sorter.sortPeople();
@@ -41,7 +41,7 @@ namespace NameSorter.Tests
         {
             Person firstPerson = new Person("First Last");
             Person secondPerson = new Person("Second SecondLast");
-            NameSorter sorter = new NameSorter();
+            NameSort sorter = new NameSort();
             sorter.addPerson(secondPerson);
             sorter.addPerson(firstPerson);
             List<Person> sortedPeople = sorter.sortPeople();
@@ -52,7 +52,7 @@ namespace NameSorter.Tests
         public void NameSorterFunctionsWithSingleName()
         {
             Person person = new Person("First Last");
-            NameSorter sorter = new NameSorter();
+            NameSort sorter = new NameSort();
             sorter.addPerson(person);
             List<Person> sortedPeople = sorter.sortPeople();
             Assert.Equal("First Last", sortedPeople[0].getFullName());

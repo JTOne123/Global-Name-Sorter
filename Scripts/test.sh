@@ -1,5 +1,5 @@
 #!/bin/sh
 
 cd NameSorter.Tests
-dotnet test
+dotnet test /p:CollectCoverage=true
 cd ..

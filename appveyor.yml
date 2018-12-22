@@ -21,4 +21,4 @@ build:
 
 test_script:
   - cmd: dotnet pack -c Release
-  - cmd: dotnet test
+  - cmd: dotnet test /p:CollectCoverage=true

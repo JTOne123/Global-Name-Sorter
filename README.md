@@ -86,9 +86,11 @@ contrib
 - [x] SOLID review
 - [x] naming review
 - [x] review c# conventions
+- [ ] update packaging, 64x64 icon
+- [ ] update docas and instructions
+- [ ] update wiki, contrib and GH pages
 - [ ] comment review
 - [ ] readability review
-- [ ] update wiki, contrib and GH pages
 - [ ] final review
 
 

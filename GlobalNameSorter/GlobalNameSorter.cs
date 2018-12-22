@@ -22,7 +22,7 @@ namespace GlobalNameSorter
           NameSort name_sorter = new NameSort();
           // Input Processing
           name_sorter.set_input_module(new FileInput());
-          name_sorter.process_input(name_sorter, args[0]);
+          name_sorter.process_input(args[0]);
 
           // Sorting
           name_sorter.set_sort_module(new LastNameAscendingSorter());

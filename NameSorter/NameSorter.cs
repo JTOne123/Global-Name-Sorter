@@ -40,8 +40,8 @@ namespace NameSorter
           input_module = newInputModule;
       }
 
-      public void process_input(NameSort name_sorter, string input_target) {
-        input_module.process_input(name_sorter, input_target);
+      public void process_input(string input_target) {
+        input_module.process_input(this, input_target);
       }
 
       public void add_output_module(IOutput new_output_module) {

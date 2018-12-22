@@ -1,6 +1,8 @@
 
 # Global X - Global Name Sorter
 
+![](https://img.shields.io/travis/PuZZleDucK/Global-Name-Sorter.svg?style=for-the-badge&logo=travis)
+![](https://ci.appveyor.com/api/projects/status/tb4d7x0a6ltcq2a2?svg=true)
 ![](https://img.shields.io/github/issues/PuZZleDucK/Global-Name-Sorter.svg?style=for-the-badge&logo=github)
 ![](https://img.shields.io/github/license/PuZZleDucK/Global-Name-Sorter.svg?style=for-the-badge&logo=github)
 ![](https://img.shields.io/nuget/v/GlobalNameSorter.svg?style=for-the-badge)
@@ -8,14 +10,7 @@
 #### Build histories
 
 ![](https://buildstats.info/travisci/chart/PuZZleDucK/Global-Name-Sorter)
-![](https://img.shields.io/travis/PuZZleDucK/Global-Name-Sorter.svg?style=for-the-badge&logo=travis)
-
 ![](https://buildstats.info/appveyor/chart/PuZZleDucK/global-name-sorter)
-![](https://ci.appveyor.com/api/projects/status/tb4d7x0a6ltcq2a2?svg=true)
-
-
-
-
 
 
 ## Project Structure
@@ -53,7 +48,7 @@ The application user interface is another place where we communicate with users 
 
 Pages:
 
-Program Usage            | NuGet Package          | GitHub iki
+Program Usage            | NuGet Package          | GitHub Wiki
 :-----------------------:|:----------------------:|:---------------------:
 ![](Images/usage.png)    | ![](Images/nuget.png)  | ![](Images/wiki.png)
 
@@ -82,7 +77,7 @@ To run the project tests:
 dotnet test
 ```
 
-you can also checkout the [Contributing Guide](CONTRIBUTING.md) or [wiki](https://github.com/PuZZleDucK/Global-Name-Sorter/wiki)to find out more about getting involved with Global Name Sorter.
+you can also checkout the [Contributing Guide](CONTRIBUTING.md) or [wiki](https://github.com/PuZZleDucK/Global-Name-Sorter/wiki) to find out more about getting involved with Global Name Sorter.
 
 
 ## Assumptions and Issues
@@ -129,7 +124,7 @@ you can also checkout the [Contributing Guide](CONTRIBUTING.md) or [wiki](https:
 - [x] update docs and instructions
 - [x] update wiki, contrib and GH pages
 - [x] readability review
-- [ ] comment review
+- [x] comment review
 - [ ] final review
 
 

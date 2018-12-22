@@ -9,6 +9,7 @@ using Formatters;
 
 namespace NameSorter
 {
+    // The NameSort class coordinates and delegates functionality with the various modules
     public class NameSort
     {
       private List<Person> inputNames;
@@ -18,49 +19,59 @@ namespace NameSorter
       private ISorter sort_module;
       private IFormatter format_module;
 
-      public NameSort() {
+      public NameSort()
+      {
         inputNames = new List<Person>();
         output_modules = new List<IOutput>();
       }
 
-      public void AddPerson(Person newPerson) {
+      public void AddPerson(Person newPerson)
+      {
         inputNames.Add(newPerson);
       }
 
-      public List<Person> SortPeople() {
+      public List<Person> SortPeople()
+      {
         sortedNames = sort_module.SortPeople(inputNames);
         return sortedNames;
       }
 
-      public string OutputString() {
+      public string OutputString()
+      {
         return format_module.FormatOutput(sortedNames);
       }
 
-      public void SetInputModule(IInput newInputModule) {
+      public void SetInputModule(IInput newInputModule)
+      {
           input_module = newInputModule;
       }
 
-      public void ProcessInput(string input_target) {
+      public void ProcessInput(string input_target)
+      {
         input_module.ProcessInput(this, input_target);
       }
 
-      public void AddOutputModule(IOutput new_output_module) {
+      public void AddOutputModule(IOutput new_output_module)
+      {
         output_modules.Add(new_output_module);
       }
 
-      public void GenerateOutputs() {
-          foreach(IOutput this_module in output_modules){
+      public void GenerateOutputs()
+      {
+          foreach(IOutput this_module in output_modules)
+          {
             this_module.GenerateOutput(String.Join("\n", sortedNames.Select(person => person.GetFullName()).ToArray()) + "\n");
           }
       }
 
-      public void SetFormatModule(IFormatter new_format) {
+      public void SetFormatModule(IFormatter new_format)
+      {
         format_module = new_format;
       }
 
-      public void SetSortModule(ISorter new_sorter) {
+      public void SetSortModule(ISorter new_sorter)
+      {
         sort_module = new_sorter;
       }
-
     }
 }

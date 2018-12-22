@@ -9,6 +9,7 @@ using Formatters;
 
 namespace GlobalNameSorter
 {
+    // GlobalNameSorter is the command line interface for the NameSorter project
     class GlobalNameSorter
     {
         static void Main(string[] args)
@@ -20,15 +21,16 @@ namespace GlobalNameSorter
               Environment.Exit(-1);
           }
           NameSort name_sorter = new NameSort();
-          // Input Processing
+
+          // Input Processing delegated to modules
           name_sorter.SetInputModule(new FileInput());
           name_sorter.ProcessInput(args[0]);
 
-          // Sorting
+          // Sorting delegated to modules
           name_sorter.SetSortModule(new LastNameAscendingSorter());
           List<Person> sorted_people = name_sorter.SortPeople();
 
-          // Formatting and Processing Output
+          // Formatting and Processing Output delegated to modules
           name_sorter.SetFormatModule(new PlainTextFormatter());
           string output = name_sorter.OutputString();
           name_sorter.AddOutputModule(new ConsoleOutput());

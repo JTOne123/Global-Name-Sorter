@@ -41,17 +41,19 @@ namespace NameSorter.Tests
 
         }
 
-
-
         public StressTests()
         {
         }
 
-        [Fact]
-        public void StressTest1000Names()
+        [Theory]
+        [InlineData(1000)]
+        [InlineData(10000)]
+        [InlineData(100000)]
+        [InlineData(1000000)]
+        public void StressTest1000Names(int name_count)
         {
 
-            string[] generated_names = GenerateSimpleNameList(1000);
+            string[] generated_names = GenerateSimpleNameList(name_count);
             System.IO.File.WriteAllLines(@"1000.txt", generated_names);
 
             _global_name_sorter = PrepareNameSorterProcess(_global_name_sorter, "1000.txt");
@@ -65,7 +67,6 @@ namespace NameSorter.Tests
             Assert.Equal(String.Concat(generated_names).Length, String.Concat(output_file_lines).Length);
             System.IO.File.Delete(@"1000.txt");
             System.IO.File.Delete(@"sorted-names-list.txt");
-
         }
 
 
@@ -97,8 +98,5 @@ namespace NameSorter.Tests
             global_name_sorter.StartInfo.RedirectStandardOutput = true;
             return global_name_sorter;
         }
-
-
-
     }
 }

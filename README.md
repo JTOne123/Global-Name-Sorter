@@ -1,8 +1,21 @@
 
 # Global X - Global Name Sorter
 
+![](https://img.shields.io/github/issues/PuZZleDucK/Global-Name-Sorter.svg?style=for-the-badge&logo=github)
+![](https://img.shields.io/github/license/PuZZleDucK/Global-Name-Sorter.svg?style=for-the-badge&logo=github)
+![](https://img.shields.io/nuget/v/GlobalNameSorter.svg?style=for-the-badge)
 
-Badges
+#### Build histories
+
+![](https://buildstats.info/travisci/chart/PuZZleDucK/Global-Name-Sorter)
+![](https://img.shields.io/travis/PuZZleDucK/Global-Name-Sorter.svg?style=for-the-badge&logo=travis)
+
+![](https://buildstats.info/appveyor/chart/PuZZleDucK/global-name-sorter)
+![](https://ci.appveyor.com/api/projects/status/tb4d7x0a6ltcq2a2?svg=true)
+
+
+
+
 
 
 ## Project Structure
@@ -34,14 +47,16 @@ Test Driven Development    | Stress Testing         | Automated Testing
 ![](Images/red-green.png)  | ![](Images/stress.png) | ![](Images/merge-ci.png)
 
 
-Communicating
-user: via cli interface, display usage, website, wiki...
+The project tries to communicate clearly with users and developers from end to end, starting with a complete web presence including [a wiki](https://github.com/PuZZleDucK/Global-Name-Sorter/wiki), simple [promotional website](https://puzzleduck.github.io/Global-Name-Sorter/) and published [NuGet packages](https://www.nuget.org/profiles/PuZZleDucK) as pictured below. This level of documentation introduces potential uses and developers to the library and application.
 
-Pages: https://puzzleduck.github.io/Global-Name-Sorter/
+The application user interface is another place where we communicate with users early in the process. The UI includes usage information to guide the user into correct usage as pictured below. I have also tried to structure the project in a simple and comprehensible way and followed dotnet conventions on structure and naming. The code itself also attempts to be relatively self contained where possible and have included comments to guide the first time reader. The project also uses expressive naming to improve readability of the code.
 
-Program Usage     | NuGet Package
-:----------------:|:------------------:
-![](Images/usage.png)    | ![](Images/nuget.png)
+Pages:
+
+Program Usage            | NuGet Package          | GitHub iki
+:-----------------------:|:----------------------:|:---------------------:
+![](Images/usage.png)    | ![](Images/nuget.png)  | ![](Images/wiki.png)
+
 
 ## Running the project
 
@@ -67,10 +82,16 @@ To run the project tests:
 dotnet test
 ```
 
-you can also checkout the [Contributing Guide](CONTRIBUTING.md) to find out more about getting involved with Global Name Sorter.
+you can also checkout the [Contributing Guide](CONTRIBUTING.md) or [wiki](https://github.com/PuZZleDucK/Global-Name-Sorter/wiki)to find out more about getting involved with Global Name Sorter.
 
 
 ## Assumptions and Issues
+
+- Difficult to judge expected usage or corner cases without more context
+- Clarifications on sort rules for unusual cases would be useful
+- Could a name not have a last-name and only have a first-name? My assumption was yes
+- A no-last-name assumption causes possible issues with where to sort a name with no last-name
+- The problem description describes invoking the program like so: ```name-sorter ./unsorted-names-list.txt```. However dotnet core seems to (by design) not produce standalone executables in the interests of platform independence. I have included instructions on how to run the program as best I can.
 
 
 
@@ -104,11 +125,11 @@ you can also checkout the [Contributing Guide](CONTRIBUTING.md) to find out more
 - [x] SOLID review
 - [x] naming review
 - [x] review c# conventions
-- [ ] update packaging, 64x64 icon
+- [x] update packaging, 64x64 icon
 - [x] update docs and instructions
-- [ ] update wiki, contrib and GH pages
+- [x] update wiki, contrib and GH pages
+- [x] readability review
 - [ ] comment review
-- [ ] readability review
 - [ ] final review
 
 
@@ -131,7 +152,7 @@ Observations from reviewing GlobalX public repositories on GitHub. They are pres
 - [x] long and descriptive naming
 - [ ] self documenting... comments usually explain "why" or "why not the usual/expected way"
 - [x] model / view separation
-- [ ] validation and verbose error reporting
+- [x] validation and verbose error reporting - n/a
 - [x] honest about defects
 
 
@@ -140,25 +161,19 @@ Observations from reviewing GlobalX public repositories on GitHub. They are pres
 
 
 GlobalX Coding Assessment
-- [ ] how your code communicates it's purpose clearly and with empathy
-- [ ] caring about how easy your code is to understand and navigate
+- [x] how your code communicates it's purpose clearly and with empathy
+- [x] caring about how easy your code is to understand and navigate
 - [x] your ability to compose quality code that adheres to SOLID principles
 - [x] how you write tests.
-
 - [x] best effort
 - [X] a solution that you are proud of.
-
 - [x] Build a name sorter
 - [x] Given a set of names, order that set first by last name, then by any given names
-- [ ] A name must have at least 1 given name and may have up to 3 given names.
-
-## Example
+- [x] A name must have at least 1 given name and may have up to 3 given names.
 - [x] Given a a file called unsorted-names-list.txt containing the following list of names;
-- [x] Executing the program in the following way;
-name-sorter ./unsorted-names-list.txt
+- [x] Executing the program in the following way; name-sorter ./unsorted-names-list.txt
 - [x] Should result the sorted names to screen;
 - [x] and a file in the working directory called sorted-names-list.txt containing the sorted names.
-
 - [x] a list with a thousand names.
 - [x] available for review on github.
 - [x] names should be sorted correctly.

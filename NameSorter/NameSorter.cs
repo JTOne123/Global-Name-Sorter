@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Models;
 using Inputs;
 using Outputs;
+using Sorters;
+using Formatters;
 
 namespace NameSorter
 {
@@ -13,6 +15,8 @@ namespace NameSorter
       private List<Person> sortedNames;
       private IInput input_module;
       private List<IOutput> output_modules;
+      private ISorter sort_module;
+      private IFormatter format_module;
 
       public NameSort() {
         inputNames = new List<Person>();
@@ -24,12 +28,12 @@ namespace NameSorter
       }
 
       public List<Person> sortPeople() {
-        sortedNames = inputNames.OrderBy(person => person.getOrderingName()).ToList();
+        sortedNames = sort_module.sort_people(inputNames);
         return sortedNames;
       }
 
       public string outputString() {
-        return String.Join("\n", sortedNames.Select(person => person.getFullName()).ToArray()) + "\n";
+        return format_module.format_output(sortedNames);
       }
 
       public void set_input_module(IInput newInputModule) {
@@ -48,6 +52,14 @@ namespace NameSorter
           foreach(IOutput this_module in output_modules){
             this_module.generate_output(String.Join("\n", sortedNames.Select(person => person.getFullName()).ToArray()) + "\n");
           }
+      }
+
+      public void set_format_module(IFormatter new_format) {
+        format_module = new_format;
+      }
+
+      public void set_sort_module(ISorter new_sorter) {
+        sort_module = new_sorter;
       }
 
     }

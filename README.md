@@ -30,7 +30,7 @@ https://travis-ci.org/PuZZleDucK/Global-Name-Sorter
 
 TDD & Tests
 
-Stress testing 1000000 random name. Possible improvements in processing file in chunks rather than all at once.
+Stress testing 1000000 random name. Possible improvements in processing file in chunks rather than all at once. Issues with some unicode characters like ⇑. Issues with single character names.
 
 Communicating
 user: via cli interface, display usage
@@ -82,14 +82,13 @@ contrib
 - [x] extract i/o modules
 - [x] automate deployment
 - [x] stress testing?
-- [ ] advanced inputs
-- [ ] add alternative CI platforms/providers?
-- [ ] wiki and GH pages
-- [ ] naming review
+- [x] advanced inputs
 - [ ] SOLID review
+- [ ] naming review
 - [ ] comment review
 - [ ] readability review
 - [ ] review c# conventions
+- [ ] update wiki, contrib and GH pages
 - [ ] final review
 
 
@@ -108,13 +107,13 @@ Observations from reviewing GlobalX public repositories on GitHub. They are pres
 - [ ] newbe/hackathon/low-hanging-fruit planning (multiple file arguments, output file specification, large files, ...)
 - [x] unit test project
 - [x] integration test project
-- [ ] stress test project
+- [x] stress test project
 - [ ] long and descriptive naming
 - [ ] self documenting... comments usually explain "why" or "why not the usual/expected way"
 - [ ] model / view separation
 - [ ] validation and verbose error reporting
 - [ ] nice .gitattributes
-- [ ] honest about defects
+- [x] honest about defects
 
 
 

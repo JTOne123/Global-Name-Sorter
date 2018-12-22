@@ -49,7 +49,6 @@ namespace NameSorter.Tests
         [InlineData(1000)]
         [InlineData(10000)]
         [InlineData(100000)]
-        [InlineData(1000000)]
         public void StressTest1000Names(int name_count)
         {
 

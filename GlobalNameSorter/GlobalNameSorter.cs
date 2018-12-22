@@ -26,7 +26,7 @@ namespace GlobalNameSorter
 
           // Sorting
           name_sorter.set_sort_module(new LastNameAscendingSorter());
-          List<Person> sorted_people = name_sorter.sortPeople();
+          List<Person> sorted_people = name_sorter.SortPeople();
 
           // Formatting and Processing Output
           name_sorter.set_format_module(new PlainTextFormatter());

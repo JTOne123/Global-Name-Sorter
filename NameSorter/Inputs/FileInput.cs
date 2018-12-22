@@ -11,7 +11,7 @@ namespace Inputs
             {
                  string[] names = System.IO.File.ReadAllLines(input_target);
                  foreach(string name in names) {
-                   name_sorter.addPerson(new Person(name));
+                   name_sorter.AddPerson(new Person(name));
                  }
             }
         }

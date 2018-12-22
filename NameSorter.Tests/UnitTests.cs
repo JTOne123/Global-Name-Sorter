@@ -15,18 +15,18 @@ namespace NameSorter.Tests
             NameSort sorter = new NameSort();
             sorter.set_format_module(new PlainTextFormatter());
             sorter.set_sort_module(new LastNameAscendingSorter());
-            sorter.addPerson(new Person("Janet Parsons"));
-            sorter.addPerson(new Person("Vaughn Lewis"));
-            sorter.addPerson(new Person("Adonis Julius Archer"));
-            sorter.addPerson(new Person("Shelby Nathan Yoder"));
-            sorter.addPerson(new Person("Marin Alvarez"));
-            sorter.addPerson(new Person("London Lindsey"));
-            sorter.addPerson(new Person("Beau Tristan Bentley"));
-            sorter.addPerson(new Person("Leo Gardner"));
-            sorter.addPerson(new Person("Hunter Uriah Mathew Clarke"));
-            sorter.addPerson(new Person("Mikayla Lopez"));
-            sorter.addPerson(new Person("Frankie Conner Ritter"));
-            sorter.sortPeople();
+            sorter.AddPerson(new Person("Janet Parsons"));
+            sorter.AddPerson(new Person("Vaughn Lewis"));
+            sorter.AddPerson(new Person("Adonis Julius Archer"));
+            sorter.AddPerson(new Person("Shelby Nathan Yoder"));
+            sorter.AddPerson(new Person("Marin Alvarez"));
+            sorter.AddPerson(new Person("London Lindsey"));
+            sorter.AddPerson(new Person("Beau Tristan Bentley"));
+            sorter.AddPerson(new Person("Leo Gardner"));
+            sorter.AddPerson(new Person("Hunter Uriah Mathew Clarke"));
+            sorter.AddPerson(new Person("Mikayla Lopez"));
+            sorter.AddPerson(new Person("Frankie Conner Ritter"));
+            sorter.SortPeople();
             Assert.Equal("Marin Alvarez\nAdonis Julius Archer\nBeau Tristan Bentley\nHunter Uriah Mathew Clarke\nLeo Gardner\nVaughn Lewis\nLondon Lindsey\nMikayla Lopez\nJanet Parsons\nFrankie Conner Ritter\nShelby Nathan Yoder\n", sorter.outputString());
         }
 
@@ -36,9 +36,9 @@ namespace NameSorter.Tests
             NameSort sorter = new NameSort();
             sorter.set_format_module(new PlainTextFormatter());
             sorter.set_sort_module(new LastNameAscendingSorter());
-            sorter.addPerson(new Person("Second SecondLast"));
-            sorter.addPerson(new Person("First Last"));
-            sorter.sortPeople();
+            sorter.AddPerson(new Person("Second SecondLast"));
+            sorter.AddPerson(new Person("First Last"));
+            sorter.SortPeople();
             Assert.Equal("First Last\nSecond SecondLast\n", sorter.outputString());
         }
 
@@ -50,9 +50,9 @@ namespace NameSorter.Tests
             NameSort sorter = new NameSort();
             sorter.set_format_module(new PlainTextFormatter());
             sorter.set_sort_module(new LastNameAscendingSorter());
-            sorter.addPerson(secondPerson);
-            sorter.addPerson(firstPerson);
-            List<Person> sortedPeople = sorter.sortPeople();
+            sorter.AddPerson(secondPerson);
+            sorter.AddPerson(firstPerson);
+            List<Person> sortedPeople = sorter.SortPeople();
             Assert.Equal("First Last", sortedPeople[0].getFullName());
         }
 
@@ -63,8 +63,8 @@ namespace NameSorter.Tests
             NameSort sorter = new NameSort();
             sorter.set_format_module(new PlainTextFormatter());
             sorter.set_sort_module(new LastNameAscendingSorter());
-            sorter.addPerson(person);
-            List<Person> sortedPeople = sorter.sortPeople();
+            sorter.AddPerson(person);
+            List<Person> sortedPeople = sorter.SortPeople();
             Assert.Equal("First Last", sortedPeople[0].getFullName());
         }
 

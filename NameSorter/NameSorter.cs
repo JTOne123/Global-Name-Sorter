@@ -23,11 +23,11 @@ namespace NameSorter
         output_modules = new List<IOutput>();
       }
 
-      public void addPerson(Person newPerson) {
+      public void AddPerson(Person newPerson) {
         inputNames.Add(newPerson);
       }
 
-      public List<Person> sortPeople() {
+      public List<Person> SortPeople() {
         sortedNames = sort_module.sort_people(inputNames);
         return sortedNames;
       }

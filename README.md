@@ -41,7 +41,7 @@ Pages: https://puzzleduck.github.io/Global-Name-Sorter/
 
 Program Usage     | NuGet Package
 :----------------:|:------------------:
-![](usage.png)    | ![](nuget.png)
+![](Images/usage.png)    | ![](Images/nuget.png)
 
 ## Running the project
 

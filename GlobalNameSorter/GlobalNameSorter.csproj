@@ -15,7 +15,10 @@
     <IncludeBuildOutput>true</IncludeBuildOutput>
     <Authors>Ben Minerds</Authors>
     <Company>GlobalX</Company>
-    <Version>1.0.4</Version>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>GlobalNameSorter</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>

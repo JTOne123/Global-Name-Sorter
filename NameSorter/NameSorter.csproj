@@ -3,7 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <IsTestProject>false</IsTestProject>
-    <Version>1.0.2</Version>
+    <PackageId>NameSorter</PackageId>
+    <Title>Name Sorter Library</Title>
+    <Description>NameSorter is the library that powers GlobalNameSorter</Description>
+    <License>MIT</License>
+    <PackageProjectUrl>https://github.com/PuZZleDucK/Global-Name-Sorter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PuZZleDucK/Global-Name-Sorter</RepositoryUrl>
+    <PackageIconUrl>https://github.com/PuZZleDucK/Global-Name-Sorter/blob/master/Images/icon.png</PackageIconUrl>
+    <IncludeSource>true</IncludeSource>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
+    <Authors>Ben Minerds</Authors>
+    <Company>GlobalX</Company>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
 </Project>

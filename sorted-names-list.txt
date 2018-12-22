@@ -1,3 +1,0 @@
-lots      of      white    space
-name with spaces
-name  with  tabs

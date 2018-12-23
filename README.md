@@ -19,9 +19,7 @@ There are three major projects in the solution provided. The `NameSorter` librar
 
 The `NameSorter` library itself is also very modular with namespaces and interfaces that seperate the responsibilities of input, output, formatting, sorting and the data models. This leaves the NameSorter.cs primarily as a delegator and coordinator to the provided modules.
 
-The source code and further documentation for this project is available at [GitHub](https://github.com/PuZZleDucK/Global-Name-Sorter).
-
-NuGet packaged versions of the [GlobalNameSorter](https://www.nuget.org/packages/GlobalNameSorter) and [NameSorter](https://www.nuget.org/packages/NameSorter) are available on NuGet.
+The source code and further documentation for this project is available at [GitHub](https://github.com/PuZZleDucK/Global-Name-Sorter). NuGet packaged versions of the [GlobalNameSorter](https://www.nuget.org/packages/GlobalNameSorter) and [NameSorter](https://www.nuget.org/packages/NameSorter) are available on NuGet or through the dotnet tooling.
 
 During development I have adopted a GitFlow like workflow and have created feature branches for most features and additions as pictured below. Each branch also ran through continuous integration testing before being merged back into the master branch.
 
@@ -33,14 +31,17 @@ The project has continuous integration setups on [Travis](https://travis-ci.org/
 
 During development of the library I utilised TDD to drive the implementation as shown in the red-green pattern on the CI builds during development shown below. During development of the command line interface I switched to using integration tests although some of these could have been re factored into unit tests also.
 
-I have stress tested the application with up to 1000000 random names, however my hardware couldn't push the tests much further than this. Performance was acceptable for the expected workloads however possible improvements could be made by processing the file in chunks rather than all at once if any use cases demanded that kind of performance. The more exotic tests uncovered some obscure issues with some unicode characters and single character names, however the possibility of these defects impacting usual operation was assumed to be minor.
+I have stress tested the application with up to 1 million random names, however my hardware couldn't push the tests much further than this and the final tests pushed to master were scaled back to keep reasonable run times. Performance was acceptable for the expected workloads however possible improvements could be made by processing the file in chunks rather than all at once if any use cases demanded that kind of performance. The more exotic tests uncovered some obscure issues with some unicode characters and single character names, however the possibility of these defects impacting usual operation was assumed to be minor.
 
-All tests suites were run sequentially in CI and some improvements could be made by separating the suites and running them in parallel, however build and test times were adequate for my purposes.
+All tests suites were run sequentially in CI and some improvements could be made by separating the suites and running them in parallel, however build and test times were adequate for my purposes. I have also just started checking the project for test coverage which looks to be at about 60% and I would aim to improve the coverage if development were to continue.
 
-Test Driven Development    | Stress Testing         | Automated Testing
-:-------------------------:|:----------------------:|:------------------------:
-![](Images/red-green.png)  | ![](Images/stress.png) | ![](Images/merge-ci.png)
+Test Driven Development    | Stress Testing         
+:-------------------------:|:----------------------:
+![](Images/red-green.png)  | ![](Images/stress.png)
 
+Automated Testing          | Test Coverage           
+:-------------------------:|:----------------------:
+![](Images/merge-ci.png)   | ![](Images/coverage.png)  
 
 The project tries to communicate clearly with users and developers from end to end, starting with a complete web presence including [a wiki](https://github.com/PuZZleDucK/Global-Name-Sorter/wiki), simple [promotional website](https://puzzleduck.github.io/Global-Name-Sorter/) and published [NuGet packages](https://www.nuget.org/profiles/PuZZleDucK) as pictured below. This level of documentation introduces potential uses and developers to the library and application.
 

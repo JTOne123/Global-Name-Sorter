@@ -9,7 +9,7 @@ using Formatters;
 
 namespace NameSorter
 {
-    // The NameSort class coordinates and delegates functionality with the various modules
+    // The NameSort class is central to NameSort, it coordinates and delegates functionality to the various modules
     public class NameSort
     {
       private List<Person> inputNames;

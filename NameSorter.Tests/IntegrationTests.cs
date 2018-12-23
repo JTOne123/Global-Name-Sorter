@@ -21,7 +21,7 @@ namespace NameSorter.Tests
         [InlineData("03-two-items")]
         [InlineData("04-provided-example")]
         [InlineData("05-unicode")]
-        // [InlineData("06-unusual")]
+        [InlineData("06-unusual")]
         [InlineData("07-whitespace")]
         public void ProgramWritesExpectedOutputToFile(string example_file)
         {

@@ -15,25 +15,25 @@
 
 ## Project Structure
 
-There are three major projects in the solution provided. The `NameSorter` library provides all the processing and formatting capabilities seperated into modules, The `GlobalNameSorter` application is a command line application for interaction with the NameSorter library and delegates most of the processing onto the library. The final project is the `NameSorter.Tests` project which contains extensive unit testing of the NameSorter library, integration testing of the GlobalNameSorter application and stress testing of the application. In the long run it could be beneficial to separate the tests into different packages to improve build times and allow developers to run the quicker unit tests during development and allow the CI pipelines to run the stress and integration tests.
+There are three major projects in the solution provided. The `NameSorter` library provides all the processing and formatting capabilities seperated into modules, The `GlobalNameSorter` application is a command line application for interaction with the NameSorter library and delegates most of the processing onto the library. The final project is the `NameSorter.Tests` project which contains extensive unit testing of the NameSorter library, integration testing of the GlobalNameSorter application and stress testing of the application. In the long run it could be beneficial to separate the test suites into different packages to improve build times and allow developers to run the quicker unit tests during development and allow the CI pipelines to run the stress and integration tests.
 
-The `NameSorter` library itself is also very modular with namespaces and interfaces that seperate the responsibilities of input, output, formatting, sorting and the data models. This leaves the NameSorter.cs primarily as a delegator and coordinator to the provided modules.
+The `NameSorter` library itself is also very modular with namespaces and interfaces that separate the responsibilities of input, output, formatting, sorting and the data models. This leaves the NameSorter.cs primarily as a delegator and coordinator to the provided modules.
+
+During development I have adopted a GitFlow like workflow and have created feature branches for most features and additions as pictured below (the exceptions being the initial project setup and changes to the production pipeline). Each branch also ran through continuous integration testing before being merged back into the master branch.
 
 The source code and further documentation for this project is available at [GitHub](https://github.com/PuZZleDucK/Global-Name-Sorter). NuGet packaged versions of the [GlobalNameSorter](https://www.nuget.org/packages/GlobalNameSorter) and [NameSorter](https://www.nuget.org/packages/NameSorter) are available on NuGet or through the dotnet tooling.
-
-During development I have adopted a GitFlow like workflow and have created feature branches for most features and additions as pictured below. Each branch also ran through continuous integration testing before being merged back into the master branch.
 
 Feature Branching          | GitFlow Workflow
 :-------------------------:|:---------------------:
 ![](Images/branches.png)   | ![](Images/flow.png)
 
-The project has continuous integration setups on [Travis](https://travis-ci.org/PuZZleDucK/Global-Name-Sorter) and [AppVeyor](https://ci.appveyor.com/project/PuZZleDucK/global-name-sorter) and the Travis setup also runs a deployment phase on changes to the master branch. This deployment phase will trigger a production build and then push the generated packages to NuGet.
+The project has continuous integration setups on [Travis](https://travis-ci.org/PuZZleDucK/Global-Name-Sorter) and [AppVeyor](https://ci.appveyor.com/project/PuZZleDucK/global-name-sorter) and the Travis setup also runs a deployment phase on changes to the master branch. This deployment phase will trigger a production build and then push the generated packages to NuGet for verification and publishing. This setup utilises hidden variables in CI to preserve the integrity of the packages.
 
-During development of the library I utilised TDD to drive the implementation as shown in the red-green pattern on the CI builds during development shown below. During development of the command line interface I switched to using integration tests although some of these could have been re factored into unit tests also.
+During development of the library I utilised TDD to drive the implementation as shown in the red-green pattern on the CI builds during development pictured below. During development of the command line interface I switched to using integration tests although some of these could have been re factored into unit tests also and I think this may have impacted the accuracy of code coverage tools.
 
-I have stress tested the application with up to 1 million random names, however my hardware couldn't push the tests much further than this and the final tests pushed to master were scaled back to keep reasonable run times. Performance was acceptable for the expected workloads however possible improvements could be made by processing the file in chunks rather than all at once if any use cases demanded that kind of performance. The more exotic tests uncovered some obscure issues with some unicode characters and single character names, however the possibility of these defects impacting usual operation was assumed to be minor.
+I have stress tested the application with up to 1 million random names, however my hardware couldn't push the tests any further and the final tests pushed to master were scaled back to keep reasonable run times. Performance was acceptable for the expected workloads however possible improvements could be made by processing the file in chunks rather than all at once if any use cases demanded that kind of performance. The more exotic tests uncovered some obscure issues with some unicode characters and single character names. The single character name bug was diagnosed and unit tests were written to demonstrate the issue before refactoring and correcting of the defect.
 
-All tests suites were run sequentially in CI and some improvements could be made by separating the suites and running them in parallel, however build and test times were adequate for my purposes. I have also just started checking the project for test coverage which looks to be at about 60% and I would aim to improve the coverage if development were to continue.
+All tests suites were run sequentially and some improvements could be made by separating the suites and running them in parallel, however build and test times were adequate for my purposes and CI runs were also acceptable (if not better). I have also just started checking the project for test coverage which looks to be at about 60% and I would aim to drive the coverage up if development were to continue. There is also a fair amount of duplication and redundancy in the test suites that I would like to refactor if time permitted.
 
 Test Driven Development    | Stress Testing         
 :-------------------------:|:----------------------:
@@ -47,8 +47,6 @@ The project tries to communicate clearly with users and developers from end to e
 
 The application user interface is another place where we communicate with users early in the process. The UI includes usage information to guide the user into correct usage as pictured below. I have also tried to structure the project in a simple and comprehensible way and followed dotnet conventions on structure and naming. The code itself also attempts to be relatively self contained where possible and have included comments to guide the first time reader. The project also uses expressive naming to improve readability of the code.
 
-Pages:
-
 Program Usage            | NuGet Package          | GitHub Wiki
 :-----------------------:|:----------------------:|:---------------------:
 ![](Images/usage.png)    | ![](Images/nuget.png)  | ![](Images/wiki.png)
@@ -58,8 +56,8 @@ Program Usage            | NuGet Package          | GitHub Wiki
 
 To get started, clone the project and change into the directory
 ```
-git clone
-cd
+git clone https://github.com/PuZZleDucK/Global-Name-Sorter
+cd Global-Name-Sorter
 ```
 
 To build a developmet version simply run:
@@ -75,7 +73,7 @@ dotnet run --project GlobalNameSorter NameSorter.Tests/Examples/04-provided-exam
 
 To run the project tests:
 ```
-dotnet test
+dotnet test /p:CollectCoverage=true
 ```
 
 you can also checkout the [Contributing Guide](CONTRIBUTING.md) or [wiki](https://github.com/PuZZleDucK/Global-Name-Sorter/wiki) to find out more about getting involved with Global Name Sorter.
@@ -85,10 +83,9 @@ you can also checkout the [Contributing Guide](CONTRIBUTING.md) or [wiki](https:
 
 - Difficult to judge expected usage or corner cases without more context
 - Clarifications on sort rules for unusual cases would be useful
-- Could a name not have a last-name and only have a first-name? My assumption was yes
+- Could a name not have a last-name and only have a first-name?
 - A no-last-name assumption causes possible issues with where to sort a name with no last-name
-- The problem description describes invoking the program like so: ```name-sorter ./unsorted-names-list.txt```. However dotnet core seems to (by design) not produce standalone executables in the interests of platform independence. I have included instructions on how to run the program as best I can.
-
+- The problem description describes invoking the program like so: ```name-sorter ./unsorted-names-list.txt```. However dotnet core does not produce standalone executables in the interests of platform independence
 
 
 ## Plan
@@ -126,12 +123,12 @@ you can also checkout the [Contributing Guide](CONTRIBUTING.md) or [wiki](https:
 - [x] update wiki, contrib and GH pages
 - [x] readability review
 - [x] comment review
-- [ ] final review
+- [x] final review
 
 
 ## Source Code Review
 
-Observations from reviewing GlobalX public repositories on GitHub. They are presented in approximate order I expect to emulate the good examples:
+Observations from reviewing GlobalX public repositories on GitHub. I hope to emulate the good examples:
 
 - [x] top level Project & Project.Tests convention
 - [x] include guides (user/dev) - readme.md/contributing.md
@@ -146,7 +143,7 @@ Observations from reviewing GlobalX public repositories on GitHub. They are pres
 - [x] integration test project
 - [x] stress test project
 - [x] long and descriptive naming
-- [ ] self documenting... comments usually explain "why" or "why not the usual/expected way"
+- [x] self documenting... comments usually explain "why" or "why not the usual/expected way"
 - [x] model / view separation
 - [x] validation and verbose error reporting - n/a
 - [x] honest about defects

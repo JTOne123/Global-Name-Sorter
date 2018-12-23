@@ -24,16 +24,16 @@ namespace NameSorter.Tests
             Assert.Equal("a", person.GetFullName());
         }
 
-        // [Fact]
-        // public void SingleCharacterNamesOutputAsExpected()
-        // {
-        //     NameSort sorter = new NameSort();
-        //     sorter.SetFormatModule(new PlainTextFormatter());
-        //     sorter.SetSortModule(new LastNameAscendingSorter());
-        //     sorter.AddPerson(new Person("a"));
-        //     sorter.SortPeople();
-        //     Assert.Equal("a\n", sorter.OutputString());
-        // }
+        [Fact]
+        public void SingleCharacterNamesOutputAsExpected()
+        {
+            NameSort sorter = new NameSort();
+            sorter.SetFormatModule(new PlainTextFormatter());
+            sorter.SetSortModule(new LastNameAscendingSorter());
+            sorter.AddPerson(new Person("a"));
+            sorter.SortPeople();
+            Assert.Equal("a\n", sorter.OutputString());
+        }
 
         [Fact]
         public void NameSorterEOutputWithExample()

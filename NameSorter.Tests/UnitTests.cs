@@ -10,6 +10,32 @@ namespace NameSorter.Tests
     public class UnitTests
     {
         [Fact]
+        public void SingleCharacterNamesFunctionsAsExpected()
+        {
+            Person person = new Person();
+            person.SetFirstNames("a");
+            Assert.Equal("a", person.GetFullName());
+        }
+
+        [Fact]
+        public void SingleCharacterNamesInstantiatesAsExpected()
+        {
+            Person person = new Person("a");
+            Assert.Equal("a", person.GetFullName());
+        }
+
+        // [Fact]
+        // public void SingleCharacterNamesOutputAsExpected()
+        // {
+        //     NameSort sorter = new NameSort();
+        //     sorter.SetFormatModule(new PlainTextFormatter());
+        //     sorter.SetSortModule(new LastNameAscendingSorter());
+        //     sorter.AddPerson(new Person("a"));
+        //     sorter.SortPeople();
+        //     Assert.Equal("a\n", sorter.OutputString());
+        // }
+
+        [Fact]
         public void NameSorterEOutputWithExample()
         {
             NameSort sorter = new NameSort();

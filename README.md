@@ -47,10 +47,16 @@ The project tries to communicate clearly with users and developers from end to e
 
 The application user interface is another place where we communicate with users early in the process. The UI includes usage information to guide the user into correct usage as pictured below. I have also tried to structure the project in a simple and comprehensible way and followed dotnet conventions on structure and naming. The code itself also attempts to be relatively self contained where possible and have included comments to guide the first time reader. The project also uses expressive naming to improve readability of the code.
 
-Program Usage            | NuGet Package          | GitHub Wiki
-:-----------------------:|:----------------------:|:---------------------:
-![](Images/usage.png)    | ![](Images/nuget.png)  | ![](Images/wiki.png)
+Program Usage            | NuGet Package
+:-----------------------:|:----------------------:
+![](Images/usage.png)    | ![](Images/nuget.png)
 
+Website            | GitHub Wiki
+:-----------------------:|:---------------------:
+![](Images/website.png)    | ![](Images/wiki.png)
+
+
+website
 
 ## Running the project
 

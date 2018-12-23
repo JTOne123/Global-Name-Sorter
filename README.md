@@ -56,8 +56,8 @@ Program Usage            | NuGet Package          | GitHub Wiki
 
 To get started, clone the project and change into the directory
 ```
-git clone
-cd
+git clone https://github.com/PuZZleDucK/Global-Name-Sorter
+cd Global-Name-Sorter
 ```
 
 To build a developmet version simply run:
@@ -73,7 +73,7 @@ dotnet run --project GlobalNameSorter NameSorter.Tests/Examples/04-provided-exam
 
 To run the project tests:
 ```
-dotnet test
+dotnet test /p:CollectCoverage=true
 ```
 
 you can also checkout the [Contributing Guide](CONTRIBUTING.md) or [wiki](https://github.com/PuZZleDucK/Global-Name-Sorter/wiki) to find out more about getting involved with Global Name Sorter.

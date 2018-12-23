@@ -13,7 +13,7 @@ namespace NameSorter.Tests
         public void SingleCharacterNamesFunctionsAsExpected()
         {
             Person person = new Person();
-            person.SetFirstNames("a");
+            person.SetNames("a");
             Assert.Equal("a", person.GetFullName());
         }
 
@@ -102,8 +102,7 @@ namespace NameSorter.Tests
         public void PersonLastNamesFunctionsAsExpected()
         {
             Person person = new Person();
-            person.SetFirstNames("First");
-            person.SetLastName("Last");
+            person.SetNames("First Last");
             Assert.Equal("First Last", person.GetFullName());
         }
 
@@ -111,7 +110,7 @@ namespace NameSorter.Tests
         public void PersonFirstNamesFunctionsAsExpected()
         {
             Person person = new Person();
-            person.SetFirstNames("First", "Second", "Third");
+            person.SetNames("First Second Third");
             Assert.Equal("First Second Third", person.GetFullName());
         }
 
@@ -119,7 +118,7 @@ namespace NameSorter.Tests
         public void PersonFirstNameFunctionsAsExpected()
         {
             Person person = new Person();
-            person.SetFirstNames("First");
+            person.SetNames("First");
             Assert.Equal("First", person.GetFullName());
         }
 

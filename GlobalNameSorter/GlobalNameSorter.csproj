@@ -19,7 +19,15 @@
     <ToolCommandName>GlobalNameSorter</ToolCommandName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
     <Version>1.0.7</Version>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <ProjectReference Include="..\NameSorter\NameSorter.csproj" />
